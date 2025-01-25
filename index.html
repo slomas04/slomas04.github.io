@@ -7,9 +7,18 @@
   <title>samsthings.org</title>
 
   <link rel="stylesheet" href="styles.css">
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+      integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+      crossorigin="anonymous"
+      defer></script>
+  <script src="js/main.js" type="module"></script>
+
 </head>
 
 <body>
-  <span>I'm working on a new site - see you soon!</span>
+  <canvas id="WGLCanvas" class="w-screen h-screen absolute"></canvas>
+  <span class="bg-gray-900 text-white text-2xl z-10 absolute top right">This should appear over the canvas!</span>
+
 </body>
 </html>
