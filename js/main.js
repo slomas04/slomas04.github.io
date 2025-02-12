@@ -1,11 +1,10 @@
 import { sketch } from 'p5js-wrapper';
-import { Star } from './star';
+import { Star, STARS } from './star';
+p5.disableFriendlyErrors = true;
 
-const MAX_NUMBER_STARS = 100;
+const MAX_NUMBER_STARS = 150;
 
-
-
-let stars = [];
+var stars = [];
 
 function createStars(){
   for(let i = 0; i < MAX_NUMBER_STARS; i++){
@@ -20,7 +19,8 @@ sketch.setup = function () {
 };
 
 sketch.windowResized = function() {
-  stars = []
+  stars = [];
+  STARS.forEach((item) => {STARS.pop(item)});
   createStars();
   resizeCanvas(windowWidth, windowHeight);
 }
