@@ -1,16 +1,35 @@
-main();
+import { sketch } from 'p5js-wrapper';
+import { Star } from './star';
+
+const MAX_NUMBER_STARS = 100;
 
 
-function main(){
-    const canvas = document.getElementById("WGLCanvas");
-    const gl = canvas.getContext("webgl");
 
-    if(gl === null){
-        alert("Your browser does not support WebGL! Please consider enabling JavaScript or using a more modern browser.");
-        return;
-    }
+let stars = [];
 
-    // This is set to tailwind's slate #950
-    gl.clearColor(0.008, 0.024, 0.094, 1.000);
-    gl.clear(gl.COLOR_BUFFER_BIT);
+function createStars(){
+  for(let i = 0; i < MAX_NUMBER_STARS; i++){
+    stars.push(new Star(Math.random() * windowWidth, Math.random() * windowHeight))
+  }
 }
+
+
+sketch.setup = function () {
+  createStars();
+  createCanvas(windowWidth, windowHeight);
+};
+
+sketch.windowResized = function() {
+  stars = []
+  createStars();
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+sketch.draw = function () {
+  background(5, 14, 37); 
+
+  stars.forEach(function(elem){
+    elem.draw();
+  });
+};
+

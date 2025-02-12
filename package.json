@@ -5,10 +5,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
+    "p5js": "^1.2.18",
+    "p5js-wrapper": "^1.2.3",
     "tailwindcss": "^4.0.0"
   },
   "scripts": {
-      "build": "vite build",
-      "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
