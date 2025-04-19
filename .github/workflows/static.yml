@@ -31,8 +31,9 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Set up Bun
-        run: curl -fsSL https://bun.sh/install | bash
-        shell: bash
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "/home/runner/.bun/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: bun install
