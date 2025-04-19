@@ -4,16 +4,25 @@
 <head>
   <meta charset="utf-8">
 
-  <title>samsthings.org</title>
+  <title>Samsthings.org</title>
 
   <link rel="stylesheet" href="styles.css">
   <script src="js/main.js" type="module"></script>
 
 </head>
 
-<body>
-  <div id="P5Canvas" class="w-screen h-screen absolute"></div>
-  <span class="bg-gray-900 text-white text-2xl z-10 absolute top right">This should appear over the canvas!</span>
+<body class="min-h-screen bg-[#eeeedd]">
+  <div class="flex items-center justify-center flex-col min-h-screen">
+    <div id="headerBox" class="w-2/5 flex flex-row">
+      <span class="bg-[#444444] text-[#eeeedd] text-4xl px-4 py-2 max-w-3/5 border-2 border-[#444444] rounded-tl-lg border-b-0">Samsthings.org</span>
+      <div id="paginator" class="min-w-2/5 grow border-2 border-[#444444] rounded-tr-lg border-b-0 overflow-y-none overflow-x-auto">
+        
+      </div>
+    </div>
+    <div id="contentsBox" class="w-2/5 h-[60vh] border-2 border-[#444444] rounded-b-lg">
+
+    </div>
+  </div>
 
 </body>
 </html>
