@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'LessPerfectDOSVGA';
+    font-weight: 400;
+    font-style: normal;
+    src: url("fonts/LessPerfectDOSVGA.woff2") format('woff2');
+  }
+
+.paginatorButton{
+    @apply text-[#444444] hover:text-[#eeeedd] hover:bg-[#444444] text-xl min-w-32 text-center border-2 border-[#444444] hover:cursor-pointer transition-colors duration-200;
+}
+
+.currentPage{
+    @apply text-[#eeeedd] bg-[#444444] hover:text-[#444444] hover:bg-[#eeeedd];
+}
+
+br{
+    @apply mb-8;
+}
+
+body{
+    font-family: 'LessPerfectDOSVGA';
+}
+
+li{
+    @apply ml-8;
+}

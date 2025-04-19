@@ -8,19 +8,58 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="js/main.js" type="module"></script>
-
 </head>
 
 <body class="min-h-screen bg-[#eeeedd]">
   <div class="flex items-center justify-center flex-col min-h-screen">
     <div id="headerBox" class="w-2/5 flex flex-row">
       <span class="bg-[#444444] text-[#eeeedd] text-4xl px-4 py-2 max-w-3/5 border-2 border-[#444444] rounded-tl-lg border-b-0">Samsthings.org</span>
-      <div id="paginator" class="min-w-2/5 grow border-2 border-[#444444] rounded-tr-lg border-b-0 overflow-y-none overflow-x-auto">
-        
+      <div id="paginator" class="flex flex-row items-center w-2/5 grow border-2 border-[#444444] rounded-tr-lg border-b-0 overflow-y-none overflow-x-scroll">
+        <span onclick="window.location='index.html'" class="paginatorButton ml-4 p-1 currentPage">Home</span>
+        <span class="text-[#444444] text-2xl translate-y-0.5 text-center p-1">⟶</span>
+        <span onclick="window.location='skills.html'" class="paginatorButton p-1">Skills</span>
+        <span class="text-[#444444] text-2xl translate-y-0.5 text-center p-1">⟶</span>
+        <span onclick="window.location='experience.html'" class="paginatorButton p-1">Experience</span>
+        <span class="text-[#444444] text-2xl translate-y-0.5 text-center p-1">⟶</span>
+        <span onclick="window.location='portfolio.html'" class="paginatorButton p-1">Portfolio</span>
+        <span class="text-[#444444] text-2xl translate-y-0.5 text-center p-1">⟶</span>
+        <span onclick="window.location='portfolio.html'" class="paginatorButton mr-4 p-1">Contact</span>
       </div>
     </div>
-    <div id="contentsBox" class="w-2/5 h-[60vh] border-2 border-[#444444] rounded-b-lg">
-
+    <div id="contentsBox" class="w-2/5 h-[60vh] border-2 border-[#444444] rounded-b-lg overflow-x-none overflow-y-auto p-4">
+      <span class="text-lg/0 text-[#444444]">
+        Hi! I'm Sam, and this is my personal website.<br>
+        The intention of this website is to inform you of who I am, what I know and what I do professionally.<br>
+        I am a UK-based software engineer and data analyst, you can see more about my 
+        <u><a href="skills.html">skills</a></u> and <u><a href="experience.html">experience</a></u> on their respective pages.<br>
+        I have a particular interest in researching the recent rise of extremist groups online, 
+        in the last decade we have seen that social media platforms will stoop as low as boosting radicalisation content to increase user engagement. 
+        Regardless of the agenda, content like this is incredibly harmful for our political landscape as it often 
+        utilises conspiracy theories and disinformation, which creates an endless sea of false information. 
+        I wish to help in curbing these strategies by keeping a close eye on the accounts posting this content, 
+        tracking what they post, who they follow and who they are. 
+        Hopefully in the future we will be able to hold social media platforms accountable for the content that they host & boost.<br>
+      </span>
+      <div class="flex flex-row border-t-2 border-[#444444] text-[#444444] text-lg py-2">
+        <div class="w-1/2 border-r-2 mx-2">
+          <span>Favourite bands/musicians:</span>
+          <ul class="list-disc">
+            <li>LCD Soundsystem</li>
+            <li>Talking Heads</li>
+            <li>CASIOPEA</li>
+            <li>Alvvays</li>
+          </ul>
+        </div>
+        <div class="w-1/2 mx-2">
+          <span>Favourite video games:</span>
+          <ul class="list-disc">
+            <li>Metal Gear Solid 2 & 3</li>
+            <li>Fallout New Vegas</li>
+            <li>Garry's Mod</li>
+            <li>Hitman 3</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
