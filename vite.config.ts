@@ -10,6 +10,7 @@ export default defineConfig({
             main: './index.html',
             contact: './contact.html',
             skills: './skills.html',
+            portfolio: './portfolio.html',
           }
         }
       }
