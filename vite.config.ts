@@ -9,6 +9,7 @@ export default defineConfig({
           input: {
             main: './index.html',
             contact: './contact.html',
+            skills: './skills.html',
           }
         }
       }
