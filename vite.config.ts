@@ -7,10 +7,7 @@ export default defineConfig({
     build: {
         rollupOptions: {
           input: {
-            main: './index.html',
-            contact: './contact.html',
-            skills: './skills.html',
-            portfolio: './portfolio.html',
+            main: './index.html'
           }
         }
       }
