@@ -1,4 +1,8 @@
 import "https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";
+import * as homeContents from "./homeContents.js";
+import * as skillsContents from "./skillsContents.js";
+import * as portfolioContents from "./portfolioContents.js";
+import * as contactContents from "./contactContents.js";
 
 // Get Important elements
 let headerbox = document.getElementById('headerBox');
@@ -14,31 +18,19 @@ portfolioButton.addEventListener("click", loadPortfolio);
 contactButton.addEventListener("click", loadContacts);
 
 function loadHome(){
-    loadSnippet("snippets/home_snip.html", contentsBox);
+    contentsBox.innerHTML = homeContents.html;
 }
 
 function loadSkills(){
-    loadSnippet("snippets/skills_snip.html", contentsBox);
+    contentsBox.innerHTML = skillsContents.html;
 }
 
 function loadPortfolio(){
-    loadSnippet("snippets/portfolio_snip.html", contentsBox);
+    contentsBox.innerHTML = portfolioContents.html;
 }
 
 function loadContacts(){
-    loadSnippet("snippets/skills_snip.html", contentsBox);
-}
-
-function loadSnippet(url, target){
-    console.log(url);
-    target.innerHTML = "";
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.onreadystatechange = function(){
-        if (this.readyState !== 4 || this.status !== 200) return;
-        target.innerHTML = this.responseText;
-    }
-    xhr.send();
+    contentsBox.innerHTML = contactContents.html;
 }
 
 loadHome();
