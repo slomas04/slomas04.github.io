@@ -4,6 +4,10 @@ import * as skillsContents from "./skillsContents.js";
 import * as portfolioContents from "./portfolioContents.js";
 import * as contactContents from "./contactContents.js";
 
+import graphGif from "../Media/graphgif.gif";
+import graphBubble from "../Media/graphbubble.png";
+import graph2 from "../Media/graph2.png";
+
 // Get Important elements
 let headerbox = document.getElementById('headerBox');
 let contentsBox = document.getElementById('contentsBox');
@@ -27,6 +31,9 @@ function loadSkills(){
 
 function loadPortfolio(){
     contentsBox.innerHTML = portfolioContents.html;
+    document.getElementById("graphgif").src = graphGif;
+    document.getElementById("graph2").src = graph2;
+    document.getElementById("graphBubble").src = graphBubble;
 }
 
 function loadContacts(){
