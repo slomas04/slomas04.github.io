@@ -1,4 +1,4 @@
-import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const i of e)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function n(e){const i={};return e.integrity&&(i.integrity=e.integrity),e.referrerPolicy&&(i.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?i.credentials="include":e.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(e){if(e.ep)return;e.ep=!0;const i=n(e);fetch(e.href,i)}})();const r=`
+import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const i of e)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&a(s)}).observe(document,{childList:!0,subtree:!0});function u(e){const i={};return e.integrity&&(i.integrity=e.integrity),e.referrerPolicy&&(i.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?i.credentials="include":e.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function a(e){if(e.ep)return;e.ep=!0;const i=u(e);fetch(e.href,i)}})();const m=`
 <span class=" text-[#444444]">
     Hi! I'm Sam, and this is my personal website.<br>
     The intention of this website is to inform you of who I am, what I know and what I do professionally.<br>
@@ -25,7 +25,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
       </ul>
     </div>
   </div>
-`,d=`
+`,p=`
 <div class="flex flex-row text-[#444444] py-2">
     <div class="w-1/2 border-r-2 mx-2">
       <span>Web Dev skills:</span>
@@ -68,7 +68,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
       <li>Numpy + Pandas + Pytesseract</li>
     </ul>
   </div>
-`,c=`
+`,f=`
 <span class=" text-[#444444]">
     Here I list a series of noteworthy projects that I have completed in the past:
   </span>
@@ -82,7 +82,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
          <br>The source code for this project is currently closed. Please contact me if you wish to see a demo.</li>
     </ul>
   </div>
-`,u=`
+`,h=`
 <div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
     <ion-icon name="mail-outline" class="text-6xl translate-y-5"></ion-icon>
     <span class="">: slomas04@outlook.com</span>
@@ -91,4 +91,4 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
     <ion-icon name="logo-discord" class="text-6xl translate-y-5"></ion-icon>
     <span class="">: slomas04</span>
   </div>
-`,m="/assets/graphgif-C85YoCv7.gif",p="/assets/graphbubble-CcEeunI8.png",f="/assets/graph2-pWDi74VD.png";document.getElementById("headerBox");let t=document.getElementById("contentsBox"),h=document.getElementById("homeButton"),g=document.getElementById("skillsButton"),y=document.getElementById("portfolioButton"),v=document.getElementById("contactButton");h.addEventListener("click",a);g.addEventListener("click",b);y.addEventListener("click",x);v.addEventListener("click",w);function a(){t.innerHTML=r}function b(){t.innerHTML=d}function x(){t.innerHTML=c,document.getElementById("graphgif").src=m,document.getElementById("graph2").src=f,document.getElementById("graphBubble").src=p}function w(){t.innerHTML=u}a();
+`,n="/assets/graphgif-C85YoCv7.gif",r="/assets/graphbubble-CcEeunI8.png",c="/assets/graph2-pWDi74VD.png",g=[n,r,c];document.getElementById("headerBox");let l=document.getElementById("contentsBox"),y=document.getElementById("homeButton"),v=document.getElementById("skillsButton"),b=document.getElementById("portfolioButton"),x=document.getElementById("contactButton");y.addEventListener("click",d);v.addEventListener("click",B);b.addEventListener("click",I);x.addEventListener("click",L);function w(){g.forEach(o=>{var t=new Image;t.src=o})}function d(){l.innerHTML=m}function B(){l.innerHTML=p}function I(){l.innerHTML=f,document.getElementById("graphgif").src=n,document.getElementById("graph2").src=c,document.getElementById("graphBubble").src=r}function L(){l.innerHTML=h}w();d();
