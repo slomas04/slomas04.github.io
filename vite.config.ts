@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({  
+    assetsInclude: ["snippets/*"],
     plugins: [    tailwindcss(),  
 
     ],
@@ -8,9 +9,6 @@ export default defineConfig({
         rollupOptions: {
           input: {
             main: './index.html'
-          },
-          watch: {
-            include: ["snippets/*"]
           }
         }
       }
