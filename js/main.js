@@ -1,4 +1,5 @@
 import "https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";
+import { initClock } from "./clockComponent.js";
 import * as homeContents from "./homeContents.js";
 import * as skillsContents from "./skillsContents.js";
 import * as portfolioContents from "./portfolioContents.js";
@@ -50,5 +51,6 @@ function loadContacts(){
     contentsBox.innerHTML = contactContents.html;
 }
 
+initClock();
 preloadAssets();
 loadHome();
