@@ -5,12 +5,11 @@ import * as skillsContents from "./skillsContents.js";
 import * as portfolioContents from "./portfolioContents.js";
 import * as contactContents from "./contactContents.js";
 
-import graphGif from "../Media/graphgif.gif";
-import graphBubble from "../Media/graphbubble.png";
-import graph2 from "../Media/graph2.png";
+import shamanReload from "../Media/shaman_reload_m.mp4"
+import shamanShoot from "../Media/shaman_shoot_m.mp4"
 
 // list of assets we want preloaded
-const preloadQueue = [graphGif, graphBubble, graph2];
+const preloadQueue = [shamanReload, shamanShoot];
 
 // Get Important elements
 let headerbox = document.getElementById('headerBox');
@@ -42,9 +41,8 @@ function loadSkills(){
 
 function loadPortfolio(){
     contentsBox.innerHTML = portfolioContents.html;
-    document.getElementById("graphgif").src = graphGif;
-    document.getElementById("graph2").src = graph2;
-    document.getElementById("graphBubble").src = graphBubble;
+    document.getElementById("shaman_shoot").src = shamanShoot;
+    document.getElementById("shaman_reload").src = shamanReload;
 }
 
 function loadContacts(){

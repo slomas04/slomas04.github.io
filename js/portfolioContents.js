@@ -1,15 +1,26 @@
-export const html = `
-<span class=" text-[#444444]">
-    Here I list a series of noteworthy projects that I have completed in the past:
-  </span>
-  <div class="w-full mx-2 text-[#444444]">
-    <ul class="list-disc">
-      <li>For my undergraduate dissertation, I developed the "Sociogram Analysis Toolkit"; 
-        A web app built on Laravel + Livewire that is able to display quick and easy visualisations
-         of scraped Instagram user data. Aimed at tracking the behaviour and connections of online radicalisers, 
-         it utilises a variety of different SNA methods.<img id="graphgif" class="border-b-2 border-[#444444] pb-2 mb-2">
-         <img id="graphBubble" class="w-2/5 inline-block border-r-2 border-[#444444] pr-8 mr-8"><img id="graph2" class="w-2/5 inline-block">
-         <br>The source code for this project is currently closed. Please contact me if you wish to see a demo.</li>
-    </ul>
+export const html = /*HTML*/`
+<div class="text-[#444444] border-[#444444] w-full h-full overflow-x-none overflow-y-scroll">
+  <div class="flex flex-row w-full justify-evenly border-b-2">
+    <div class="w-1/3 m-2 p-2 flex-col justify-evenly">
+      <span class="text-2xl font-bold">Revenge of the Shaman's Son</span>
+      <span>Made in unity, this is a short first-person shooter about managing a painstakingly realistic revolver through a series of treacherous dungeons.<br>
+      Your gun, the colt single action army, has no shortcuts. You must scavenge the parts for the bullets from throughout the dungeon and craft them before performing a manual reload. <br>
+      The dungeon is filled with snakes and skeletons that will operate with deadly precision to put you in the grave. Only when you kill all of the enemies in one dungeon can you move to the next level.
+      </span>
+      <br>
+      <a class="underline font-bold text-[#444464]" href="https://github.com/slomas04/Unity-ShamansSon">View the project on github!</a>
+    </div>
+    <div class="w-1/3 m-2">
+      <video width="540" height="1080" autoplay loop>
+        <source id="shaman_shoot" type="video/mp4">
+      </video>
+    </div>
+    <div class="w-1/3 m-2">
+      <video width="540" height="1080" autoplay loop>
+        <source id="shaman_reload" type="video/mp4">
+      </video>
+    </div>
   </div>
+</div>
 `
+// 360 x 180 Image size 2:1 ratio
