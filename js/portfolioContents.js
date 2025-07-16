@@ -41,6 +41,24 @@ export const html = /*HTML*/`
       <a class="underline font-bold text-[#444464]" href="https://github.com/slomas04/sociogram-analysis-toolkit">View the project on github!</a>
     </div>
   </div>
+
+  <div id="shaman-son" class="flex flex-row w-full justify-evenly border-b-2">
+    <div class="w-1/3 m-2">
+      <img id="quiz_main">
+    </div>
+    <div class="w-1/3 m-2 p-2 flex-col justify-evenly">
+      <span class="text-2xl font-bold">The Daily Quiz App</span> <br>
+      <span>
+        Made in android studio using kotlin, this simple app gives you a daily quiz of your choosing. The number of questions, their category and their difficulty can be chosen at any time, and you can opt to be notified daily to take the quiz. <br>
+        With Google Firebase functionality implemented, you can store your scores remotely, and compare with your friends!
+      </span>
+      <br>
+      <a class="underline font-bold text-[#444464]" href="https://github.com/slomas04/Daily-QuizApp">View the project on github!</a>
+    </div>
+    <div class="w-1/3 m-2">
+      <img id="quiz_quiz">
+    </div>
+  </div>
 </div>
 `
 // 360 x 180 Image size 2:1 ratio

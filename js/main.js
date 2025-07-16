@@ -9,9 +9,11 @@ import shamanReload from "../Media/shaman_reload_m.mp4";
 import shamanShoot from "../Media/shaman_shoot_m.mp4";
 import netExpand from "../Media/net_expand.mp4";
 import netRetract from "../Media/net_retract.mp4";
+import quizMenu from "../Media/quiz_menu.png";
+import quizQuiz from "../Media/quiz_quiz.png";
 
 // list of assets we want preloaded
-const preloadQueue = [shamanReload, shamanShoot, netExpand, netRetract];
+const preloadQueue = [shamanReload, shamanShoot, netExpand, netRetract, quizMenu, quizQuiz];
 
 // Get Important elements
 let headerbox = document.getElementById('headerBox');
@@ -47,6 +49,8 @@ function loadPortfolio(){
     document.getElementById("shaman_reload").src = shamanReload;
     document.getElementById("net_expand").src = netExpand;
     document.getElementById("net_retract").src = netRetract;
+    document.getElementById("quiz_main").src = quizMenu;
+    document.getElementById("quiz_quiz").src = quizQuiz;
 }
 
 function loadContacts(){

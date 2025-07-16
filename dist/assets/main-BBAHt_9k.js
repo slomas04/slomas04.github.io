@@ -1,4 +1,4 @@
-import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&n(s)}).observe(document,{childList:!0,subtree:!0});function f(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=f(e);fetch(e.href,t)}})();var r,d;function v(){r=document.getElementById("clock"),d=new Intl.DateTimeFormat([],{timeZone:"Europe/London",hour:"numeric",minute:"numeric",hour12:!0,timeZoneName:"short"}),a(),setInterval(a,5e3)}function a(){var o=d.format(new Date);o=o.replace(" ",""),r.innerHTML=o}const y=`
+import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const l of t.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function v(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=v(e);fetch(e.href,t)}})();var r,d;function g(){r=document.getElementById("clock"),d=new Intl.DateTimeFormat([],{timeZone:"Europe/London",hour:"numeric",minute:"numeric",hour12:!0,timeZoneName:"short"}),a(),setInterval(a,5e3)}function a(){var i=d.format(new Date);i=i.replace(" ",""),r.innerHTML=i}const w=`
 <div class="flex flex-row h-full">
   <span class=" text-[#444444] border-r-2 w-9/12">
     Hi! I'm Sam, and this is my personal website.<br>
@@ -28,7 +28,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
     </div>
   </div>
 </div>
-`,g=`
+`,x=`
 <div class="flex flex-row text-[#444444] py-2">
     <div class="w-1/2 border-r-2 mx-2">
       <span>Web Dev skills:</span>
@@ -70,7 +70,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
       <li>Numpy + Pandas + Pytesseract</li>
     </ul>
   </div>
-`,w=`
+`,b=`
 <div class="text-[#444444] border-[#444444] w-full h-full overflow-x-none overflow-y-scroll">
   <div id="shaman-son" class="flex flex-row w-full justify-evenly border-b-2">
     <div class="w-1/3 m-2 p-2 flex-col justify-evenly">
@@ -113,8 +113,26 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
       <a class="underline font-bold text-[#444464]" href="https://github.com/slomas04/sociogram-analysis-toolkit">View the project on github!</a>
     </div>
   </div>
+
+  <div id="shaman-son" class="flex flex-row w-full justify-evenly border-b-2">
+    <div class="w-1/3 m-2">
+      <img id="quiz_main">
+    </div>
+    <div class="w-1/3 m-2 p-2 flex-col justify-evenly">
+      <span class="text-2xl font-bold">The Daily Quiz App</span> <br>
+      <span>
+        Made in android studio using kotlin, this simple app gives you a daily quiz of your choosing. The number of questions, their category and their difficulty can be chosen at any time, and you can opt to be notified daily to take the quiz. <br>
+        With Google Firebase functionality implemented, you can store your scores remotely, and compare with your friends!
+      </span>
+      <br>
+      <a class="underline font-bold text-[#444464]" href="https://github.com/slomas04/Daily-QuizApp">View the project on github!</a>
+    </div>
+    <div class="w-1/3 m-2">
+      <img id="quiz_quiz">
+    </div>
+  </div>
 </div>
-`,x=`
+`,I=`
 <div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
   <ion-icon name="mail-outline" class="text-6xl translate-y-5"></ion-icon>
   <span class="">: slomas04@outlook.com</span>
@@ -123,4 +141,4 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
   <ion-icon name="logo-discord" class="text-6xl translate-y-5"></ion-icon>
   <span class="">: slomas04</span>
 </div>
-`,c="/assets/shaman_reload_m-CLOZpAe9.mp4",u="/assets/shaman_shoot_m-d9r6YZtf.mp4",m="/assets/net_expand-DMSDOwdF.mp4",h="/assets/net_retract-DCg-w6qD.mp4",b=[c,u,m,h];document.getElementById("headerBox");let l=document.getElementById("contentsBox"),I=document.getElementById("homeButton"),L=document.getElementById("skillsButton"),k=document.getElementById("portfolioButton"),B=document.getElementById("contactButton");I.addEventListener("click",p);L.addEventListener("click",E);k.addEventListener("click",T);B.addEventListener("click",_);function S(){b.forEach(o=>{var i=new Image;i.src=o})}function p(){l.innerHTML=y}function E(){l.innerHTML=g}function T(){l.innerHTML=w,document.getElementById("shaman_shoot").src=u,document.getElementById("shaman_reload").src=c,document.getElementById("net_expand").src=m,document.getElementById("net_retract").src=h}function _(){l.innerHTML=x}v();S();p();
+`,c="/assets/shaman_reload_m-CLOZpAe9.mp4",u="/assets/shaman_shoot_m-d9r6YZtf.mp4",m="/assets/net_expand-DMSDOwdF.mp4",h="/assets/net_retract-DCg-w6qD.mp4",p="/assets/quiz_menu-C7pGun0A.png",f="/assets/quiz_quiz-Dt2ovYxJ.png",k=[c,u,m,h,p,f];document.getElementById("headerBox");let s=document.getElementById("contentsBox"),B=document.getElementById("homeButton"),L=document.getElementById("skillsButton"),E=document.getElementById("portfolioButton"),S=document.getElementById("contactButton");B.addEventListener("click",y);L.addEventListener("click",T);E.addEventListener("click",q);S.addEventListener("click",z);function _(){k.forEach(i=>{var o=new Image;o.src=i})}function y(){s.innerHTML=w}function T(){s.innerHTML=x}function q(){s.innerHTML=b,document.getElementById("shaman_shoot").src=u,document.getElementById("shaman_reload").src=c,document.getElementById("net_expand").src=m,document.getElementById("net_retract").src=h,document.getElementById("quiz_main").src=p,document.getElementById("quiz_quiz").src=f}function z(){s.innerHTML=I}g();_();y();
