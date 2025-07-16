@@ -5,11 +5,13 @@ import * as skillsContents from "./skillsContents.js";
 import * as portfolioContents from "./portfolioContents.js";
 import * as contactContents from "./contactContents.js";
 
-import shamanReload from "../Media/shaman_reload_m.mp4"
-import shamanShoot from "../Media/shaman_shoot_m.mp4"
+import shamanReload from "../Media/shaman_reload_m.mp4";
+import shamanShoot from "../Media/shaman_shoot_m.mp4";
+import netExpand from "../Media/net_expand.mp4";
+import netRetract from "../Media/net_retract.mp4";
 
 // list of assets we want preloaded
-const preloadQueue = [shamanReload, shamanShoot];
+const preloadQueue = [shamanReload, shamanShoot, netExpand, netRetract];
 
 // Get Important elements
 let headerbox = document.getElementById('headerBox');
@@ -43,6 +45,8 @@ function loadPortfolio(){
     contentsBox.innerHTML = portfolioContents.html;
     document.getElementById("shaman_shoot").src = shamanShoot;
     document.getElementById("shaman_reload").src = shamanReload;
+    document.getElementById("net_expand").src = netExpand;
+    document.getElementById("net_retract").src = netRetract;
 }
 
 function loadContacts(){
