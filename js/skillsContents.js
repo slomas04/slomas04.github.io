@@ -1,5 +1,5 @@
 export const html = /*HTML*/`
-<div class="flex flex-row text-[#444444] py-2">
+<div class="flex flex-row text-[#444444] py-2 overflow-x-none">
     <div class="w-1/2 border-r-2 mx-2">
       <span>Web Dev skills:</span>
       <ul class="list-disc">
@@ -25,7 +25,7 @@ export const html = /*HTML*/`
       </ul>
     </div>
   </div>
-  <div class="w-full mx-2 border-t-2 border-[#444444] text-[#444444] py-2">
+  <div class="w-19/20 mx-2 border-t-2 border-[#444444] text-[#444444] py-2">
     <span>I am also experienced with these technologies:</span>
     <ul class="list-disc">
       <li>Android Studio</li>

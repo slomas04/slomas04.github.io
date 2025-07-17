@@ -29,7 +29,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
   </div>
 </div>
 `,x=`
-<div class="flex flex-row text-[#444444] py-2">
+<div class="flex flex-row text-[#444444] py-2 overflow-x-none">
     <div class="w-1/2 border-r-2 mx-2">
       <span>Web Dev skills:</span>
       <ul class="list-disc">
@@ -55,7 +55,7 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
       </ul>
     </div>
   </div>
-  <div class="w-full mx-2 border-t-2 border-[#444444] text-[#444444] py-2">
+  <div class="w-19/20 mx-2 border-t-2 border-[#444444] text-[#444444] py-2">
     <span>I am also experienced with these technologies:</span>
     <ul class="list-disc">
       <li>Android Studio</li>
@@ -133,12 +133,14 @@ import"https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.j
   </div>
 </div>
 `,I=`
-<div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
-  <ion-icon name="mail-outline" class="text-6xl translate-y-5"></ion-icon>
-  <span class="">: slomas04@outlook.com</span>
-</div>
-<div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
-  <ion-icon name="logo-discord" class="text-6xl translate-y-5"></ion-icon>
-  <span class="">: slomas04</span>
-</div>
+<div class="flex flex-col justify-center items-center w-full h-full"><div>
+  <div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
+    <ion-icon name="mail-outline" class="text-6xl translate-y-5"></ion-icon>
+    <span class="">: slomas04@outlook.com</span>
+  </div>
+  <div class="flex-row text-2xl text-[#444444] -mt-6 mb-6">
+    <ion-icon name="logo-discord" class="text-6xl translate-y-5"></ion-icon>
+    <span class="">: slomas04</span>
+  </div>
+</div></div>
 `,c="/assets/shaman_reload_m-CLOZpAe9.mp4",u="/assets/shaman_shoot_m-d9r6YZtf.mp4",m="/assets/net_expand-DMSDOwdF.mp4",h="/assets/net_retract-DCg-w6qD.mp4",p="/assets/quiz_menu-C7pGun0A.png",f="/assets/quiz_quiz-Dt2ovYxJ.png",k=[c,u,m,h,p,f];document.getElementById("headerBox");let s=document.getElementById("contentsBox"),B=document.getElementById("homeButton"),L=document.getElementById("skillsButton"),E=document.getElementById("portfolioButton"),S=document.getElementById("contactButton");B.addEventListener("click",y);L.addEventListener("click",T);E.addEventListener("click",q);S.addEventListener("click",z);function _(){k.forEach(i=>{var o=new Image;o.src=i})}function y(){s.innerHTML=w}function T(){s.innerHTML=x}function q(){s.innerHTML=b,document.getElementById("shaman_shoot").src=u,document.getElementById("shaman_reload").src=c,document.getElementById("net_expand").src=m,document.getElementById("net_retract").src=h,document.getElementById("quiz_main").src=p,document.getElementById("quiz_quiz").src=f}function z(){s.innerHTML=I}g();_();y();
