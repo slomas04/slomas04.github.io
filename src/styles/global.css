@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme inline{
+    --font-mono: var(--font-terminess-mono);
+    --font-sans: var(--font-segoeui);
+}

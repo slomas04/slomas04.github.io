@@ -1,0 +1,29 @@
+---
+import { Font } from "astro:assets";
+
+const site_title : string = "slomfish's site"
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+        <Font cssVariable="--font-terminess-mono" />
+		<Font cssVariable="--font-segoeui" />
+		
+		<meta name="generator" content={Astro.generator} />
+		<title>{site_title}</title>
+	</head>
+	<body class="static">
+		<img src="src/assets/images/1742417748898566.jpg", class="w-full h-screen
+																  z-1 absolute"/>
+		<div class="w-full h-screen flex 
+                    justify-center items-center z-5 absolute">
+			<slot/>
+		</div>
+	</body>
+</html>

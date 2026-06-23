@@ -1,11 +1,28 @@
 ---
 import Welcome from '../components/Welcome.astro';
+import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import Layout from '../layouts/Layout.astro';
+import PageColumn from '../components/PageColumn.astro'
+import ColumnElement from '../components/ColumnElement.astro'
+import "../styles/global.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseBackdrop>
+	<PageColumn>
+		<ColumnElement>
+			<h1 class="text-2xl font-bold">Hello!</h1>
+		</ColumnElement>
+		
+		<ColumnElement>
+			<p>The quick brown fox jumps over the lazy dog</p>
+		</ColumnElement>
+
+		<ColumnElement>
+			<p class="font-mono">Hmm yes this is monospaced font
+				<br>Hmm yes this is monospaced font</p>
+		</ColumnElement>
+	</PageColumn>
+</BaseBackdrop>
