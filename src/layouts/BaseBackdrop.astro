@@ -19,14 +19,14 @@ const site_title : string = "slomfish's site"
 		<meta name="generator" content={Astro.generator} />
 		<title>{site_title}</title>
 	</head>
-	<body class="static">
+	<body class="static overflow-x-hidden">
 		
-		<div id="video-container" class="z-1 absolute 
-										flex align-center justify-center content-center">
+		<div id="video-container" class="z-1 absolute w-full h-full
+										flex align-center">
 			<video id="background-video" 
-				   src="/videos/forestbackdrop.mp4" autoplay
+				   src="./src/videos/forestbackdrop.mp4" autoplay
 				   class = "hidden"/>
-			<canvas id="video-canvas" class=""/>
+			<canvas id="video-canvas" class="glslCanvas object-top-left"/>
 		</div>
 
 		<div class="w-full h-screen flex 

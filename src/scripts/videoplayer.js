@@ -1,13 +1,17 @@
-// Grafted from https://stackoverflow.com/questions/4429440/html5-display-video-inside-canvas
+import {initColorBuffer} from "./initcolorbuffer.js"
 
-var canvas = document.getElementById('video-canvas');
-var ctx = canvas.getContext('2d');
-var video = document.getElementById('background-video');
+main()
 
-video.addEventListener("play", () => {
-  function step() {
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-});
+function main(){
+    const canvas = document.getElementById('video-canvas');
+    const video  = document.getElementById('background-video');
+
+    const gl = canvas.getContext("webgl");
+    if (gl === null){
+        alert("Your browser failed to start WebGL!!! Whatever man!!");
+        return;
+    }
+
+    
+
+}
