@@ -19,7 +19,7 @@ export const bayerFrag = `
         vec4 col = texture(iChannel0,uv);
         
         // gamma correction
-        col = vec4(pow(col.rgb,vec3(2.2)) - 0.02,col.a);
+        col = vec4(pow(col.rgb,vec3(1.6)) - 0.02,col.a);
         
         // find bayer matrix entry based on fragment position
         float bayerValue = bayerIndex[int(fragCoord.x) % 4][int(fragCoord.y) % 4];

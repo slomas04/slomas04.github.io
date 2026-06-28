@@ -5,7 +5,11 @@ import {defaultFrag} from "./shaders/defaultfrag.js";
 import {defaultVert} from "./shaders/defaultvert.js";
 
 const canvas = document.getElementById('video-canvas');
+const containerElem = document.getElementById('video-container');
 const video  = document.getElementById('background-video');
+
+const videoHeight = video.videoHeight;
+const videoWidth = video.videoWidth;
 
 function initShaders(){
     const renderer = new THREE.WebGLRenderer({canvas});
@@ -42,14 +46,30 @@ function initShaders(){
     scene.add(new THREE.Mesh(plane, material));
 
     function resizeRendererToDisplaySize(renderer) {
-        const canvas = renderer.domElement;
-        const width = canvas.clientWidth;
-        const height = canvas.clientHeight;
-        const needResize = canvas.width !== width || canvas.height !== height;
-        if (needResize) {
-            renderer.setSize(width, height, false);
-        }
-        return needResize;
+        const canvase = document.documentElement;
+        const heightMeasure = window.outerHeight; 
+        const widthMeasure  = window.outerWidth;
+
+        const portrait = heightMeasure > widthMeasure;
+        console.log(portrait, widthMeasure, heightMeasure)
+
+        const scaleFactor =  (portrait) ? heightMeasure / videoHeight
+                                        : widthMeasure / videoWidth;
+        const targetHeight = (portrait) ? heightMeasure
+                                        : videoHeight * scaleFactor;
+        const targetWidth =  (portrait) ? videoWidth * scaleFactor 
+                                        : widthMeasure;
+
+        //console.log(portrait, targetWidth, targetHeight)
+        renderer.setSize(targetWidth, targetHeight, true)
+
+        // const width = canvas.clientWidth;
+        // const height = canvas.clientHeight;
+        // const needResize = canvas.width !== width || canvas.height !== height;
+        // if (needResize) {
+        //     renderer.setSize(width, height, false);
+        // }
+        // return needResize;
     }
 
     function render(time) {
