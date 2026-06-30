@@ -1,7 +1,8 @@
 ---
-import { Font } from "astro:assets";
+import { Font} from "astro:assets";
 
 import SiteIndex from "../components/SiteIndex.astro"
+import forestBackdrop from "../videos/forestbackdrop.mp4"
 
 const site_title : string = "slomfish's site"
 ---
@@ -26,7 +27,7 @@ const site_title : string = "slomfish's site"
 		<div id="video-container" class="z-1 absolute w-full h-full
 										flex align-center">
 			<video id="background-video" 
-				   src="./src/videos/forestbackdrop.mp4" autoplay loop
+				   src={forestBackdrop} autoplay loop
 				   class = "hidden"/>
 			<canvas id="video-canvas" class=""/>
 		</div>

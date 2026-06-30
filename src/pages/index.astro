@@ -1,7 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+
 import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import PageColumn from '../components/PageColumn.astro'
 import ColumnElement from '../components/ColumnElement.astro'
+
+import meAsfImg from '/src/images/me-asf.png';
+
 import "../styles/global.css";
 
 // Grafted from https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
@@ -25,7 +30,7 @@ const age = getAge("2004-07-07")
 					</p>
 				</div>
 				<div class="flex flex-col justify-center ml-5 min-w-2/5 2xl:min-w-1/5">
-					<img src="/src/images/me-asf.png"
+					<Image src={meAsfImg} alt="Bourdain in Europe with a baguette and a coffee"
 					     class="grayscale mix-blend-color-dodge"/>
 					<p class="text-xs italic">(Me asf on a Thursday afternoon)</p>
 				</div>
