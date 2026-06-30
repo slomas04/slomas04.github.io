@@ -1,8 +1,7 @@
 import * as THREE from 'three';
 
-import {bayerFrag} from "./shaders/bayerdither.js";
-import {defaultFrag} from "./shaders/defaultfrag.js";
-import {defaultVert} from "./shaders/defaultvert.js";
+import { bayerFrag } from "./shaders/bayerdither.js";
+import { blueNoiseFrag } from './shaders/blueNoise.js';
 
 const canvas = document.getElementById('video-canvas');
 const containerElem = document.getElementById('video-container');
@@ -14,7 +13,7 @@ const videoWidth = video.videoWidth;
 function initShaders(){
     const renderer = new THREE.WebGLRenderer({canvas});
     renderer.autoClearColor = false
-    const fragmentShader = bayerFrag;
+    const fragmentShader = blueNoiseFrag;
 
     const camera = new THREE.OrthographicCamera(
         -1, // left
@@ -27,15 +26,23 @@ function initShaders(){
     const scene = new THREE.Scene();
     const plane = new THREE.PlaneGeometry(2, 2);
 
-    const texture = new THREE.VideoTexture(video);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    texture.minFilter = THREE.NearestFilter;
-    texture.magFilter = THREE.NearestFilter;
+    const videoTexture = new THREE.VideoTexture(video);
+    videoTexture.colorSpace = THREE.SRGBColorSpace;
+    videoTexture.minFilter = THREE.NearestFilter;
+    videoTexture.magFilter = THREE.NearestFilter;
+
+    const noiseTexture = new THREE.TextureLoader()
+                                .load( '/src/images/bluenoise_rgba_1024.png' );
+    noiseTexture.wrapS = THREE.RepeatWrapping;
+    noiseTexture.wrapT = THREE.RepeatWrapping;
+
 
     const uniforms = {
         iTime: {value:0},
         iResolution: {value: new THREE.Vector3()},
-        iChannel0: {value: texture},
+        iChannelResolution: {value: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]},
+        iChannel0: {value: videoTexture},
+        iChannel1: {value: noiseTexture}
     };
 
     const material = new THREE.ShaderMaterial({
@@ -51,8 +58,6 @@ function initShaders(){
         const widthMeasure  = window.outerWidth;
 
         const portrait = heightMeasure > widthMeasure;
-        console.log(portrait, widthMeasure, heightMeasure)
-
         const scaleFactor =  (portrait) ? heightMeasure / videoHeight
                                         : widthMeasure / videoWidth;
         const targetHeight = (portrait) ? heightMeasure
@@ -60,16 +65,7 @@ function initShaders(){
         const targetWidth =  (portrait) ? videoWidth * scaleFactor 
                                         : widthMeasure;
 
-        //console.log(portrait, targetWidth, targetHeight)
         renderer.setSize(targetWidth, targetHeight, true)
-
-        // const width = canvas.clientWidth;
-        // const height = canvas.clientHeight;
-        // const needResize = canvas.width !== width || canvas.height !== height;
-        // if (needResize) {
-        //     renderer.setSize(width, height, false);
-        // }
-        // return needResize;
     }
 
     function render(time) {
