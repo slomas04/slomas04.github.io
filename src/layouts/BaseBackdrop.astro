@@ -1,10 +1,12 @@
 ---
-import { Font} from "astro:assets";
+import { Font, Image } from "astro:assets";
 
-import SiteIndex from "../components/SiteIndex.astro"
-import forestBackdrop from "../videos/forestbackdrop.mp4"
+import SiteIndex from "../components/SiteIndex.astro";
+import forestBackdrop from "../videos/forestbackdrop.mp4";
 
-const site_title : string = "slomfish's site"
+import blueNoise from "../images/bluenoise_rgba_1024.png";
+
+const site_title : string = "slomfish's site";
 ---
 
 
@@ -29,6 +31,8 @@ const site_title : string = "slomfish's site"
 			<video id="background-video" 
 				   src={forestBackdrop} autoplay loop
 				   class = "hidden"/>
+			<Image src={blueNoise} alt="Blue Noise pattern for dithering" 
+			       class="hidden" id="blue-noise"/>
 			<canvas id="video-canvas" class=""/>
 		</div>
 

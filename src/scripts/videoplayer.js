@@ -6,6 +6,7 @@ import { blueNoiseFrag } from './shaders/blueNoise.js';
 const canvas = document.getElementById('video-canvas');
 const containerElem = document.getElementById('video-container');
 const video  = document.getElementById('background-video');
+const blueNoise  = document.getElementById('blue-noise');
 
 const videoHeight = video.videoHeight;
 const videoWidth = video.videoWidth;
@@ -33,8 +34,7 @@ function initShaders(){
     videoTexture.minFilter = THREE.NearestFilter;
     videoTexture.magFilter = THREE.NearestFilter;
 
-    const noiseTexture = new THREE.TextureLoader()
-                                .load( '/src/images/bluenoise_rgba_1024.png' );
+    const noiseTexture = new THREE.TextureLoader(blueNoise);
     noiseTexture.wrapS = THREE.RepeatWrapping;
     noiseTexture.wrapT = THREE.RepeatWrapping;
 
