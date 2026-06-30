@@ -4130,7 +4130,7 @@ void main() {
         vec4 tex = texture(iChannel0, uv);
         vec2 shift = floor(cos(iTime*vec2(5,9))*1e4)*TEMPORAL;
         vec2 tuv = (coord/SCALE+shift)/iChannelResolution[1].xy;
-        float dither = texture(iChannel1, tuv).r;
+        float dither = texture(iChannel1, tuv).r ;
 
         vec4 col = floor(tex*SHADES+dither)/SHADES;
         fragColor = col;
