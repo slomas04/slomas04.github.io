@@ -9,6 +9,8 @@ const video  = document.getElementById('background-video');
 
 const videoHeight = video.videoHeight;
 const videoWidth = video.videoWidth;
+var prevScale = 0;
+var lastMs = 0
 
 function initShaders(){
     const renderer = new THREE.WebGLRenderer({canvas});
@@ -53,37 +55,42 @@ function initShaders(){
     scene.add(new THREE.Mesh(plane, material));
 
     function resizeRendererToDisplaySize(renderer) {
-        const canvase = document.documentElement;
         const heightMeasure = window.outerHeight; 
         const widthMeasure  = window.outerWidth;
+
 
         const portrait = heightMeasure > widthMeasure;
         const scaleFactor =  (portrait) ? heightMeasure / videoHeight
                                         : widthMeasure / videoWidth;
-        const targetHeight = (portrait) ? heightMeasure
-                                        : videoHeight * scaleFactor;
-        const targetWidth =  (portrait) ? videoWidth * scaleFactor 
-                                        : widthMeasure;
+        if (prevScale != scaleFactor){
+            const targetHeight = (portrait) ? heightMeasure
+                                            : videoHeight * scaleFactor;
+            const targetWidth =  (portrait) ? videoWidth * scaleFactor 
+                                            : widthMeasure;
 
-        renderer.setSize(targetWidth, targetHeight, true)
+            renderer.setSize(targetWidth, targetHeight, true)
+            prevScale = scaleFactor
+        }
+        
     }
 
     function render(time) {
         time *= 0.001;  // convert to seconds
-        
-        resizeRendererToDisplaySize(renderer);
-        
-        const canvas = renderer.domElement;
-        uniforms.iResolution.value.set(canvas.width, canvas.height, 1);
-        uniforms.iTime.value = time;
-        
-        renderer.render(scene, camera);
-        
+        const ms = Math.round(time * 1000);
+        if (ms > lastMs + 20){ // Render at 20fps
+            resizeRendererToDisplaySize(renderer);
+            
+            const canvas = renderer.domElement;
+            uniforms.iResolution.value.set(canvas.width, canvas.height, 1);
+            uniforms.iTime.value = time;
+            
+            renderer.render(scene, camera);
+            lastMs = ms;
+        }
         requestAnimationFrame(render);
     }
 
     requestAnimationFrame(render);
-
 }
 
 initShaders()

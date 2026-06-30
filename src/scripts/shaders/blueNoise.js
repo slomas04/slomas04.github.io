@@ -4,7 +4,7 @@ export const blueNoiseFrag = `
     #include <common>
 
     #define SHADES 12.0
-    #define SCALE 2.0
+    #define SCALE 4.0
     #define TEMPORAL 2.0
 
     uniform vec3 iResolution;

@@ -4111,7 +4111,7 @@ void main() {
     #include <common>
 
     #define SHADES 12.0
-    #define SCALE 2.0
+    #define SCALE 4.0
     #define TEMPORAL 2.0
 
     uniform vec3 iResolution;
@@ -4140,4 +4140,4 @@ void main() {
     void main() {
         mainImage(gl_FragColor, gl_FragCoord.xy);
     }
-`,xs=document.getElementById(`video-canvas`);document.getElementById(`video-container`);var Ss=document.getElementById(`background-video`),Cs=Ss.videoHeight,ws=Ss.videoWidth;function Ts(){let t=new ys({canvas:xs});t.autoClearColor=!1;let n=bs,i=new Rr(-1,1,1,-1,-1,1),a=new mt,o=new Xn(2,2),s=new Wn(Ss);s.colorSpace=O,s.minFilter=r,s.magFilter=r;let c=new kr().load(`/src/images/bluenoise_rgba_1024.png`);c.wrapS=e,c.wrapT=e;let l={iTime:{value:0},iResolution:{value:new W},iChannelResolution:{value:[new W,new W,new W,new W]},iChannel0:{value:s},iChannel1:{value:c}},u=new ar({fragmentShader:n,uniforms:l});a.add(new Mn(o,u));function d(e){document.documentElement;let t=window.outerHeight,n=window.outerWidth,r=t>n,i=r?t/Cs:n/ws,a=r?t:Cs*i,o=r?ws*i:n;e.setSize(o,a,!0)}function f(e){e*=.001,d(t);let n=t.domElement;l.iResolution.value.set(n.width,n.height,1),l.iTime.value=e,t.render(a,i),requestAnimationFrame(f)}requestAnimationFrame(f)}Ts();
+`,xs=document.getElementById(`video-canvas`);document.getElementById(`video-container`);var Ss=document.getElementById(`background-video`),Cs=Ss.videoHeight,ws=Ss.videoWidth,Ts=0,Es=0;function Ds(){let t=new ys({canvas:xs});t.autoClearColor=!1;let n=bs,i=new Rr(-1,1,1,-1,-1,1),a=new mt,o=new Xn(2,2),s=new Wn(Ss);s.colorSpace=O,s.minFilter=r,s.magFilter=r;let c=new kr().load(`/src/images/bluenoise_rgba_1024.png`);c.wrapS=e,c.wrapT=e;let l={iTime:{value:0},iResolution:{value:new W},iChannelResolution:{value:[new W,new W,new W,new W]},iChannel0:{value:s},iChannel1:{value:c}},u=new ar({fragmentShader:n,uniforms:l});a.add(new Mn(o,u));function d(e){let t=window.outerHeight,n=window.outerWidth,r=t>n,i=r?t/Cs:n/ws;if(Ts!=i){let a=r?t:Cs*i,o=r?ws*i:n;e.setSize(o,a,!0),Ts=i}}function f(e){e*=.001;let n=Math.round(e*1e3);if(n>Es+20){d(t);let r=t.domElement;l.iResolution.value.set(r.width,r.height,1),l.iTime.value=e,t.render(a,i),Es=n}requestAnimationFrame(f)}requestAnimationFrame(f)}Ds();
