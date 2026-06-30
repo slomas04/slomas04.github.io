@@ -1,28 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import BaseBackdrop from '../layouts/BaseBackdrop.astro';
-import Layout from '../layouts/Layout.astro';
 import PageColumn from '../components/PageColumn.astro'
 import ColumnElement from '../components/ColumnElement.astro'
 import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Grafted from https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
+const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
+const age = getAge("2004-07-07")
 ---
 
 <BaseBackdrop>
 	<PageColumn>
 		<ColumnElement>
-			<h1 class="text-2xl font-bold">Hello!</h1>
-		</ColumnElement>
-		
-		<ColumnElement>
-			<p>The quick brown fox jumps over the lazy dog</p>
-		</ColumnElement>
-
-		<ColumnElement>
-			<p class="font-mono">Hmm yes this is monospaced font
-				<br>Hmm yes this is monospaced font</p>
+			<div class="flex flex-row justify-between">
+				<div>
+					<p class="font-mono text-lg">
+						Name: Sam <br>
+						Pronouns: Any/All <br>
+						Age: {age}
+					</p>
+					<p class=""><br>
+						British software and data engineer based in Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿.
+						<br>This is my personal site, where you can experience my ramblings and recommendations.
+					</p>
+				</div>
+				<div class="flex flex-col justify-center ml-5 min-w-2/5 2xl:min-w-1/5">
+					<img src="/src/images/me-asf.png"
+					     class="grayscale mix-blend-color-dodge"/>
+					<p class="text-xs italic">(Me asf on a Thursday afternoon)</p>
+				</div>
+			</div>
 		</ColumnElement>
 	</PageColumn>
 </BaseBackdrop>

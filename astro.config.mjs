@@ -17,19 +17,19 @@ export default defineConfig({
     cssVariable: "--font-terminess-mono",
     options:{
       variants: [{
-        src: ['/fonts/TerminessMonoWOFF2/TerminessNFM.woff2'],
+        src: ['./src/fonts/TerminessMonoWOFF2/TerminessNFM.woff2'],
         weight: 'normal',
         style: 'normal'
       }, {
-        src: ['/fonts/TerminessMonoWOFF2/TerminessNFM-Bold.woff2'],
+        src: ['./src/fonts/TerminessMonoWOFF2/TerminessNFM-Bold.woff2'],
         weight: 'bold',
         style: 'normal'
       }, {
-        src: ['/fonts/TerminessMonoWOFF2/TerminessNFM-Italic.woff2'],
+        src: ['./src/fonts/TerminessMonoWOFF2/TerminessNFM-Italic.woff2'],
         weight: 'normal',
         style: 'italic'
       }, {
-        src: ['/fonts/TerminessMonoWOFF2/TerminessNFM-BoldItalic.woff2'],
+        src: ['./src/fonts/TerminessMonoWOFF2/TerminessNFM-BoldItalic.woff2'],
         weight: 'bold',
         style: 'italic'
       }]
@@ -40,23 +40,23 @@ export default defineConfig({
     cssVariable: "--font-segoeui",
     options:{
       variants: [{
-        src: ['/fonts/SegoeUI/SegoeUI.woff2'],
+        src: ['./src/fonts/SegoeUI/SegoeUI.woff2'],
         weight: 'normal',
         style: 'normal'
       },{
-        src: ['/fonts/SegoeUI/SegoeUI-SemiBold.woff2'],
+        src: ['./src/fonts/SegoeUI/SegoeUI-SemiBold.woff2'],
         weight: 'bold',
         style: 'normal'
       }, {
-        src: ['/fonts/SegoeUI/SegoeUI-Bold.woff2'],
+        src: ['./src/fonts/SegoeUI/SegoeUI-Bold.woff2'],
         weight: 'bolder',
         style: 'normal'
       }, {
-        src: ['/fonts/SegoeUI/SegoeUI-Italic.woff2'],
+        src: ['./src/fonts/SegoeUI/SegoeUI-Italic.woff2'],
         weight: 'normal',
         style: 'italic'
       }, {
-        src: ['/fonts/SegoeUI/SegoeUI-BoldItalic.woff2'],
+        src: ['./src/fonts/SegoeUI/SegoeUI-BoldItalic.woff2'],
         weight: 'bold',
         style: 'italic'
       }]

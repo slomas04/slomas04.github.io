@@ -1,0 +1,33 @@
+---
+import SiteIndexWidget from "./SiteIndexWidget.astro"
+
+const SiteIndexClass = `underline hover:text-green-600 
+                        transition duration-300 ease-in-out 
+                        hover:scale-110`
+---
+
+<div id="site-index" class="sm:w-1/4 2xl:w-1/4 mx-2 sm:h-full my-2">
+    <div class="flex flex-col justify-start border-y-3 sm:border-y-0 border-olive-300">
+        <SiteIndexWidget>
+            <div class="text-center px-1 pt-2 sm:py-2">
+                <a href="/"
+                class="font-mono italic text-4xl sm:text-3xl 2xl:text-4xl">
+                    <span style="color:#F96C6C">s</span><span style="color:#F9CA6C">l</span><span style="color:#CAF96C">o</span><span style="color:#6CF96C">m</span><span style="color:#6CF9CA">.</span><span style="color:#6CCAF9">f</span><span style="color:#6C6CF9">i</span><span style="color:#CA6CF9">s</span><span style="color:#F96CCA">h</span>
+                </a>
+        </div>
+        </SiteIndexWidget>
+        <SiteIndexWidget>
+            <div class="overflow-x-hidden px-2 sm:pt-2">
+                <pre class="font-mono leading-[1.15] text-lg 2xl:text-xl">
+/ ....................................................................................
+├──> <a href="/" class={SiteIndexClass}>Welcome</a> ............................................................................
+├──> <a href="/blog/" class={SiteIndexClass}>Blog</a>/ ..................................................................
+│    └──> <a href="/projects/" class={SiteIndexClass}>Projects</a> ..........................................................
+│    └──> <a href="/recipes/" class={SiteIndexClass}>Recipes</a> ........................................................
+│    └──> <a href="/music/" class={SiteIndexClass}>Music</a> ........................................................
+└──> <a href="/contact/" class={SiteIndexClass}>Contact</a> ........................................................
+                </pre>
+            </div>
+        </SiteIndexWidget>
+    </div>
+</div>
