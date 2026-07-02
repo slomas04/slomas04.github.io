@@ -4,6 +4,7 @@ import { Font, Image } from "astro:assets";
 import SiteIndex from "../components/SiteIndex.astro";
 import forestBackdrop from "../videos/forestbackdrop.mp4";
 import blueNoise from "../images/bluenoise_rgba_1024.png";
+import PageColumn from "../components/PageColumn.astro";
 
 const site_title : string = "slomfish's site";
 ---
@@ -30,7 +31,9 @@ const site_title : string = "slomfish's site";
 			<div id="site-index-container"
 			     class="flex flex-col sm:flex-row w-full sm:w-5/6 2xl:w-3/5 h-full sm:h-9/10">
 				<SiteIndex />
-				<slot/>
+				<PageColumn>
+					<slot/>
+				</PageColumn>
 			</div>
 		</div>
 

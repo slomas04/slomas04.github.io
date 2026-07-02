@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+
+import BaseBackdrop from '../layouts/BaseBackdrop.astro';
+import ColumnElement from '../components/ColumnElement.astro'
+
+import discord_logo from "../images/discord_logo.png";
+import email_icon from "../images/email_icon.png"
+
+import "../styles/global.css";
+---
+
+<BaseBackdrop>
+    <ColumnElement>
+        <p class="text-2xl">Contact</p><br>
+        <p>Below you can find some links and resources on where to contact me.</p>
+    </ColumnElement>
+    <ColumnElement>
+        <div class="flex flex-row-reverse justify-center">
+			<div>
+                <p class="text-2xl">Discord</p><br>
+                <p class="text-lg">slomas04</p>
+            </div>
+
+			<div class="flex flex-col justify-center max-w-1/10 2xl:max-w-1/10 mx-8">
+				<Image src={discord_logo} alt="Discord logo" format="png"
+						class="grayscale mix-blend-color-dodge"/>
+			</div>
+		</div>
+    </ColumnElement>
+    <ColumnElement>
+        <div class="flex flex-row justify-center content-center">
+			<div class="text-right mx-8">
+                <p class="text-2xl">Email</p><br>
+                <p class="text-lg">slomas04@outlook.com</p>
+            </div>
+
+			<div class="flex flex-col justify-center max-w-1/10 2xl:max-w-1/10">
+				<Image src={email_icon} alt="Discord logo" format="png"
+						class="grayscale mix-blend-color-dodge"/>
+			</div>
+		</div>
+    </ColumnElement>
+</BaseBackdrop>
