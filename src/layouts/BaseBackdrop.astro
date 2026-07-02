@@ -3,7 +3,6 @@ import { Font, Image } from "astro:assets";
 
 import SiteIndex from "../components/SiteIndex.astro";
 import forestBackdrop from "../videos/forestbackdrop.mp4";
-
 import blueNoise from "../images/bluenoise_rgba_1024.png";
 
 const site_title : string = "slomfish's site";
@@ -16,7 +15,7 @@ const site_title : string = "slomfish's site";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-
+		
         <Font cssVariable="--font-terminess-mono" />
 		<Font cssVariable="--font-segoeui" />
 		<script src="../scripts/videoplayer.js"></script>
@@ -29,11 +28,11 @@ const site_title : string = "slomfish's site";
 		<div id="video-container" class="z-1 absolute w-full h-full
 										flex align-center">
 			<video id="background-video" 
-				   src={forestBackdrop} autoplay loop
+				   src={forestBackdrop} loop muted preload="metadata"
 				   class = "hidden"/>
 			<Image src={blueNoise} alt="Blue Noise pattern for dithering" 
 			       class="hidden" id="blue-noise"/>
-			<canvas id="video-canvas" class=""/>
+			<canvas id="video-canvas" class="block"/>
 		</div>
 
 		<div class="w-full h-screen flex 
