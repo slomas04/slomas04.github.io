@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 
 @theme inline{
     --font-mono: var(--font-terminess-mono);

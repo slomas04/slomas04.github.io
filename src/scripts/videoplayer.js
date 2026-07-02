@@ -6,6 +6,7 @@ import { blueNoiseFrag } from './shaders/blueNoise.js';
 const canvas = document.getElementById('video-canvas');
 const video  = document.getElementById('background-video');
 const blueNoise  = document.getElementById('blue-noise');
+const cover = document.getElementById('background-cover');
 
 var prevScale = 0;
 var lastMs = 0
@@ -92,6 +93,7 @@ function initShaders(vWidth, vHeight){
     }
 
     requestAnimationFrame(render);
+    cover.classList.add("animate-fade-out")
 }
 
 // We need to make sure the video is cached and loaded first
@@ -111,4 +113,3 @@ function checkVideoState() {
 }
 
 checkVideoState();
-
