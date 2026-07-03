@@ -5,6 +5,10 @@ import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import ColumnElement from '../components/ColumnElement.astro'
 
 import meAsfImg from '/src/images/me-asf.png';
+import bi_flag from '/src/images/flags/bi_flag.png'
+import gf_flag from '/src/images/flags/gf_flag.png'
+import bi_gf_dither from '/src/images/flags/bi_gf_dither.png'
+
 
 import "../styles/global.css";
 
@@ -35,6 +39,11 @@ const age = getAge("2004-07-07")
 		</div>
 	</ColumnElement>
 	<ColumnElement>
-		Hello!
+		<p class="text-left">mi olin ale</p>
+		<div class="flex justify-center content-center">
+			<Image src={bi_flag} alt="Bisexual Flag" class="h-10"/>
+			<Image src={gf_flag} alt="Genderfluid Flag" class="h-10"/>
+		</div>
+		<p class="text-right">mi sama ale</p>
 	</ColumnElement>
 </BaseBackdrop>
