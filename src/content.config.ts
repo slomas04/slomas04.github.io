@@ -7,21 +7,9 @@ import { glob, file } from 'astro/loaders';
 // 3. Import Zod
 import { z } from 'astro/zod';
 
-// 4. Define a `loader` and `schema` for each collection
-const blog = defineCollection({
-  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-  }),
-});
-
 const albums = defineCollection({
     loader: file("src/collections/music/albums.json"),
     schema: z.object({
-        id: z.string(),
         favourite: z.string(),
         comment: z.string(),
         date_added: z.string()
