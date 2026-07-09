@@ -24,12 +24,12 @@ const site_title : string = "slomfish's site";
 		<meta name="generator" content={Astro.generator} />
 		<title>{site_title}</title>
 	</head>
-	<body class="static overflow-x-hidden overflow-y-hidden">
+	<body class="static overflow-x-visible overflow-y-hidden">
 
 		<div class="w-dvw h-dvh flex 
                     justify-center items-center z-5 absolute">
 			<div id="site-index-container"
-			     class="flex flex-col sm:flex-row w-full sm:w-5/6 2xl:w-3/5 h-full sm:h-9/10">
+			     class="flex flex-col sm:flex-row w-full sm:w-5/6 2xl:w-3/5 h-full sm:h-9/10 overflow-x-visible">
 				<SiteIndex />
 				<PageColumn>
 					<slot/>
