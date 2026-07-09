@@ -13,7 +13,7 @@ import bi_gf_dither from '/src/images/flags/bi_gf_dither.png'
 import "../styles/global.css";
 
 // Grafted from https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
-const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
+const getAge = (birthDate: string) => Math.floor((new Date().valueOf() - new Date(birthDate).getTime()) / 3.15576e+10);
 const age = getAge("2004-07-07")
 ---
 
