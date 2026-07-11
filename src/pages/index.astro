@@ -3,13 +3,6 @@ import { Image } from 'astro:assets';
 
 import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import ColumnElement from '../components/ColumnElement.astro'
-
-import meAsfImg from '/src/images/me-asf.png';
-import bi_flag from '/src/images/flags/bi_flag.png'
-import gf_flag from '/src/images/flags/gf_flag.png'
-import bi_gf_dither from '/src/images/flags/bi_gf_dither.png'
-
-
 import "../styles/global.css";
 
 // Grafted from https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
@@ -32,7 +25,7 @@ const age = getAge("2004-07-07")
 				</p>
 			</div>
 			<div class="flex flex-col justify-center ml-5 min-w-2/5 2xl:min-w-1/5">
-				<Image src={meAsfImg} alt="Bourdain in Europe with a baguette and a coffee"
+				<img src="https://media.slom.fish/images/me-asf.png" alt="Bourdain in Europe with a baguette and a coffee"
 						class="grayscale mix-blend-color-dodge"/>
 				<p class="text-xs italic">(Me asf on a Thursday afternoon)</p>
 			</div>
@@ -42,9 +35,9 @@ const age = getAge("2004-07-07")
 		<div class="mx-4">
 			<p class="text-left">mi olin ale</p>
 			<div class="flex justify-center content-center">
-				<Image src={bi_flag} alt="Bisexual Flag" class="h-10"/>
-				<Image src={bi_gf_dither} alt="Bisexual Flag blend" class="h-10 w-60"/>
-				<Image src={gf_flag} alt="Genderfluid Flag" class="h-10"/>
+				<img src="https://media.slom.fish/images/flags/bi_flag.png" alt="Bisexual Flag" class="h-10 w-full"/>
+				<img src="https://media.slom.fish/images/flags/bi_gf_dither.png" alt="Bisexual Flag blend" class="h-10 w-60"/>
+				<img src="https://media.slom.fish/images/flags/gf_flag.png" alt="Genderfluid Flag" class="h-10 w-full"/>
 			</div>
 			<p class="text-right">mi sama ale</p>
 		</div>

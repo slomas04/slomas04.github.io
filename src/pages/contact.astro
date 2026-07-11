@@ -4,9 +4,6 @@ import { Image } from 'astro:assets';
 import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import ColumnElement from '../components/ColumnElement.astro'
 
-import discord_logo from "../images/discord_logo.png";
-import email_icon from "../images/email_icon.png"
-
 import "../styles/global.css";
 ---
 
@@ -23,7 +20,7 @@ import "../styles/global.css";
             </div>
 
 			<div class="flex flex-col justify-center max-w-1/10 2xl:max-w-1/10 mx-8">
-				<Image src={discord_logo} alt="Discord logo" format="png"
+				<img src="https://media.slom.fish/images/discord_logo.png" alt="Discord logo" format="png"
 						class="grayscale mix-blend-color-dodge"/>
 			</div>
 		</div>
@@ -36,7 +33,7 @@ import "../styles/global.css";
             </div>
 
 			<div class="flex flex-col justify-center max-w-1/10 2xl:max-w-1/10">
-				<Image src={email_icon} alt="Discord logo" format="png"
+				<img src="https://media.slom.fish/images/email_icon.png" alt="Discord logo" format="png"
 						class="grayscale mix-blend-color-dodge"/>
 			</div>
 		</div>
