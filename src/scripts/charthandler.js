@@ -2,10 +2,12 @@ import {Chart} from 'chart.js/auto';
 
 const artistBtns = document.getElementById("artistBtnDiv").childNodes;
 const albumBtns = document.getElementById("albumBtnDiv").childNodes;
-
+const trackBtns = document.getElementById("trackBtnDiv").childNodes;
 
 const artistCanvas = document.getElementById("topartists");
 const albumCanvas = document.getElementById("topalbums");
+const trackCanvas = document.getElementById("toptracks");
+
 
 var avatarImages = [[],[],[]]
 
@@ -16,6 +18,10 @@ artistBtns.forEach( function(artistBtn) {
 
 albumBtns.forEach( function(albumBtn) {
     albumBtn.onclick = function(e) {doRender(albumBtns, albumCanvas, albumBtn)}
+});
+
+trackBtns.forEach( function(trackBtn) {
+    trackBtn.onclick = function(e) {doRender(trackBtns, trackCanvas, trackBtn)}
 });
 
 function setupBarChart(canvas, data, pos, key){
@@ -99,7 +105,8 @@ async function doRender(btns, canvas, elem){
     const dataID = elem.id.split('-')[1];
     const dataURL = `https://media.slom.fish/musicdata/${dataID}.json`
     const listenData = (await ( await fetch(dataURL) ).json()).slice(0,10)
-    var currentChart = Chart.getChart(canvas.id)
+    var currentChart = Chart.getChart(canvas.id);
+    var key = Object.keys(listenData[0])[0];
 
     var pos = null;
     switch (dataID.split('_')[0]){
@@ -118,17 +125,26 @@ async function doRender(btns, canvas, elem){
         const img = new Image();
         img.src = entry['url'];
         avatarImages[pos].push(img);
+
+        if (entry[key].length > 15){
+            entry[key] = entry[key].substring(0,12) + '...';
+        }
+    });
+    var labels = listenData.map( function(track) {
+        return (track[key].length > 15) 
+            ? track[key].substring(0,12) + '...' 
+            : track[key];
     });
 
     if (currentChart == undefined){
-        setupBarChart(canvas, listenData, pos,
-            Object.keys(listenData[0])[0]);
+        setupBarChart(canvas, listenData, pos, key)
     } else {
         currentChart.data.datasets.pop();
         currentChart.data.datasets.push({
             data: listenData,
+            labels: labels,
             parsing: {
-                xAxisKey: Object.keys(listenData[0])[0],
+                xAxisKey: key,
                 yAxisKey: "plays"
             },
             borderColor: '#bb4d00',
@@ -143,3 +159,4 @@ Chart.defaults.color = "#d8d8d0";
 
 doRender(albumBtns, albumCanvas, albumBtns[0]);
 doRender(artistBtns, artistCanvas, artistBtns[0]);
+doRender(trackBtns, trackCanvas, trackBtns[0]);
