@@ -6,7 +6,7 @@ import forestBackdrop from "../videos/forestbackdrop.mp4";
 import blueNoise from "../images/bluenoise_rgba_1024.png";
 import PageColumn from "../components/PageColumn.astro";
 
-const site_title : string = "slomfish's site";
+const site_title : string = "slom.fish";
 ---
 
 
@@ -46,7 +46,7 @@ const site_title : string = "slomfish's site";
 										overflow-x-hidden
 										overflow-y-hidden">
 			<video id="background-video" 
-				   src={forestBackdrop} loop muted preload="metadata"
+				   src="https://media.slom.fish/video/forestbackdrop.mp4" loop muted preload="metadata"
 				   class = "hidden"/>
 			<img src="https://media.slom.fish/images/bluenoise_rgba_1024.png" alt="Blue Noise pattern for dithering" 
 			       class="hidden" id="blue-noise"/>
