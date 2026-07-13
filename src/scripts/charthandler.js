@@ -1,5 +1,5 @@
 import {Chart} from 'chart.js/auto';
-import { combDuplicateEntries, chartOptions } from './chartutils';
+import { combDuplicateEntries, chartOptions } from './chartutils.ts';
 
 var avatarImages = [[],[],[]]
 

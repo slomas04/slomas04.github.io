@@ -1,3 +1,21 @@
+const tooltipCallbacks = {
+    title: (tooltipItem: any) => {
+        let raw = tooltipItem[0]['raw']
+        if ('track_name' in raw) return raw['track_name'];
+        if ('album_name' in raw) return raw['album_name'];
+        return raw["artist_name"];
+    },
+    afterTitle: (tooltipItem: any) => {
+        let raw = tooltipItem[0]['raw']
+        if ('track_name' in raw) return raw['artist_name'];
+        if ('album_name' in raw) return raw['artist_name'];
+        return "";
+    },
+    label: (tooltipItem: any) => {
+        let raw = tooltipItem['raw'];
+        return raw['plays'] + " plays";
+    }
+};
 
 export const chartOptions = {
             animation: true,
@@ -7,7 +25,9 @@ export const chartOptions = {
                 legend: {
                     display: false,
                 },
-                
+                tooltip: {
+                    callbacks: tooltipCallbacks,
+                }
             },
             scales: {
                 y: {
@@ -29,8 +49,8 @@ export const chartOptions = {
                         drawTicks: false,
                     },
                     // Shorten tick length
-                    afterTickToLabelConversion: function(chart) {
-                        chart.ticks.forEach( function(tick){
+                    afterTickToLabelConversion: function(chart: any) {
+                        chart.ticks.forEach( function(tick: any){
                             tick["label"] = (tick["label"].length > 15)
                                 ? tick["label"].substring(0,12) + "..."
                                 : tick["label"];
@@ -44,18 +64,18 @@ export const chartOptions = {
     Imported data will have the same album but with additional artists if there is a collab track
     This causes an overlap on the graph.
 */
-export function combDuplicateEntries(listenData, dataID){
+export function combDuplicateEntries(listenData: any, dataID: any){
     if (dataID == "toptracks"){ // Don't bother for individual tracks
         return listenData;
     }
 
-    var primaryNames = listenData.map( function(item) { // Filter down to just primary names
+    var primaryNames = listenData.map( function(item: any) { // Filter down to just primary names
         return item["artist_name"].split(",")[0];
     });
 
     // recorded: array of non-duplicate values
     // duplicates: array of duplicate value pairs
-    var recorded = [], duplicates = [];
+    var recorded: any = [], duplicates = [];
     for (let i = 0; i < primaryNames.length; i++){
         (recorded.includes(primaryNames[i]))
             ? duplicates.push([recorded.indexOf(primaryNames[i]), i])
@@ -80,8 +100,8 @@ export function combDuplicateEntries(listenData, dataID){
 
     // Filter out nulls and re-sort the data (desc)
     return listenData
-            .filter(item => item !== null)
-            .sort(function(a,b) {
+            .filter((item: any) => item !== null)
+            .sort(function(a: any,b: any) {
                 return (a['plays'] < b['plays'])
                         ? 1
                         : ((b['plays'] < a['plays'] ? -1 : 0));
