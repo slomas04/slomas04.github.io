@@ -16,44 +16,44 @@ import ColumnElement from '../components/ColumnElement.astro';
     </ColumnElement>
     
     <ColumnElement>
-        <div class="w-full flex justify-center flex-col">
-            <div class="w-full flex justify-between flex-row">
-                <p class="text-left font-mono bg-amber-900 rounded-sm px-2">Most played artists</p>
+        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap">
+            <div class="w-full flex justify-between flex-col sm:flex-row">
+                <p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played artists</p>
                 <div id="artistBtnDiv" class="flex justify-end flex-row font-mono">
                     <div id="btn-topartists_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div>
                     <div id="btn-topartists_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div>
                     <div id="btn-topartists_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div>
                 </div>
             </div>
-            <canvas class="w-full mt-4 mb-2" id="topartists"></canvas>
+            <canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64" id="topartists"></canvas>
         </div>
     </ColumnElement>
 
     <ColumnElement>
-        <div class="w-full flex justify-center flex-col">
-            <div class="w-full flex justify-between flex-row">
-                <p class="text-left font-mono bg-amber-900 rounded-sm px-2">Most played tracks</p>
+        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap">
+            <div class="w-full flex justify-between flex-col sm:flex-row">
+                <p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played tracks</p>
                 <div id="trackBtnDiv" class="flex justify-end flex-row font-mono">
                     <div id="btn-toptracks_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div>
                     <div id="btn-toptracks_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div>
                     <div id="btn-toptracks_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div>
                 </div>
             </div>
-            <canvas class="w-full mt-4 mb-2" id="toptracks"></canvas>
+            <canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64" id="toptracks"></canvas>
         </div>
     </ColumnElement>
 
     <ColumnElement>
-        <div class="w-full flex justify-center flex-col">
-            <div class="w-full flex justify-between flex-row">
-                <p class="text-left font-mono bg-amber-900 rounded-sm px-2">Most played albums</p>
+        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap">
+            <div class="w-full flex justify-between flex-col sm:flex-row">
+                <p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played albums</p>
                 <div id="albumBtnDiv" class="flex justify-end flex-row font-mono">
                     <div id="btn-topalbums_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div>
                     <div id="btn-topalbums_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div>
                     <div id="btn-topalbums_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div>
                 </div>
             </div>
-            <canvas class="w-full mt-4 mb-2" id="topalbums"></canvas>
+            <canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64" id="topalbums"></canvas>
         </div>
     </ColumnElement>
 </BaseBackdrop>

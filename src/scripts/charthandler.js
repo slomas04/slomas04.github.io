@@ -1,8 +1,6 @@
 import {Chart} from 'chart.js/auto';
 import { combDuplicateEntries, chartOptions } from './chartutils.ts';
 
-var avatarImages = [[],[],[]]
-
 const artistBtns = document.getElementById("artistBtnDiv").childNodes;
 const albumBtns = document.getElementById("albumBtnDiv").childNodes;
 const trackBtns = document.getElementById("trackBtnDiv").childNodes;
@@ -10,6 +8,8 @@ const trackBtns = document.getElementById("trackBtnDiv").childNodes;
 const artistCanvas = document.getElementById("topartists");
 const albumCanvas = document.getElementById("topalbums");
 const trackCanvas = document.getElementById("toptracks");
+
+var avatarImages = [[],[],[]]
 
 artistBtns.forEach( function(artistBtn) {
     artistBtn.onclick = function(e) {doRender(artistBtns, artistCanvas, artistBtn)}
@@ -43,12 +43,13 @@ function setupBarChart(canvas, data, pos, key){
             afterDatasetsDraw(chart, args, pluginOptions){
                 const {ctx, data} = chart;
                 const meta = chart.getDatasetMeta(0);
+                const barWidth = meta.data[0].width;
 
                 meta.data.forEach((bar, index) => {
                     const img = avatarImages[pos][index];
                     if (img && img.complete) {
-                        const width = 30; 
-                        const height = 30;
+                        const width = barWidth - 2; 
+                        const height = barWidth - 2;
                         
                         const x = bar.x - (width / 2);
                         
@@ -99,17 +100,7 @@ async function doRender(btns, canvas, elem){
         const img = new Image();
         img.src = entry['url'];
         avatarImages[pos].push(img);
-
-        //if (entry[key].length > 15){
-        //    entry[key] = entry[key].substring(0,12) + '...';
-        //}
     });
-    /*
-    var labels = listenData.map( function(track) {
-        return (track[key].length > 15) 
-            ? track[key].substring(0,12) + '...' 
-            : track[key];
-    }); */
 
     if (currentChart == undefined){
         setupBarChart(canvas, listenData, pos, key)

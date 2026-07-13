@@ -20,6 +20,7 @@ const tooltipCallbacks = {
 export const chartOptions = {
             animation: true,
             responsive: true,
+            maintainAspectRatio: false,
             
             plugins: {
                 legend: {
@@ -31,7 +32,7 @@ export const chartOptions = {
             },
             scales: {
                 y: {
-                    grace: '60%',
+                    grace: '50%',
                     grid: {
                         color: '#7b3306',
                         display: true,
