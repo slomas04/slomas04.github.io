@@ -32,7 +32,7 @@ export const chartOptions = {
             },
             scales: {
                 y: {
-                    grace: '50%',
+                    grace: '60%',
                     grid: {
                         color: '#7b3306',
                         display: true,
