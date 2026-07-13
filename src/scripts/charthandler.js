@@ -1,4 +1,7 @@
 import {Chart} from 'chart.js/auto';
+import { combDuplicateEntries, chartOptions } from './chartutils';
+
+var avatarImages = [[],[],[]]
 
 const artistBtns = document.getElementById("artistBtnDiv").childNodes;
 const albumBtns = document.getElementById("albumBtnDiv").childNodes;
@@ -7,10 +10,6 @@ const trackBtns = document.getElementById("trackBtnDiv").childNodes;
 const artistCanvas = document.getElementById("topartists");
 const albumCanvas = document.getElementById("topalbums");
 const trackCanvas = document.getElementById("toptracks");
-
-
-var avatarImages = [[],[],[]]
-
 
 artistBtns.forEach( function(artistBtn) {
     artistBtn.onclick = function(e) {doRender(artistBtns, artistCanvas, artistBtn)}
@@ -38,38 +37,7 @@ function setupBarChart(canvas, data, pos, key){
                 backgroundColor: '#bb4d00'
             }],
         },
-        options: {
-            animation: true,
-            responsive: true,
-            
-            plugins: {
-                legend: {
-                    display: false,
-                },
-                
-            },
-            scales: {
-                y: {
-                    grace: '60%',
-                    grid: {
-                        color: '#7b3306',
-                        display: true,
-                        drawBorder: true,
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                    }
-                },
-                x: {
-                    grid: {
-                        color: '#7b3306',
-                        display: true,
-                        drawBorder: true,
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                    }
-                }
-            }
-        },
+        options: chartOptions,
         plugins: [{
             id: 'barAvatarPlugin',
             afterDatasetsDraw(chart, args, pluginOptions){
@@ -104,7 +72,13 @@ async function doRender(btns, canvas, elem){
 
     const dataID = elem.id.split('-')[1];
     const dataURL = `https://media.slom.fish/musicdata/${dataID}.json`
-    const listenData = (await ( await fetch(dataURL) ).json()).slice(0,10)
+
+    // Comb duplicates then get top 10
+    var listenData = combDuplicateEntries(
+         await ( await fetch(dataURL) )
+        .json(), dataID.split('_')[0])
+        .slice(0,10);
+
     var currentChart = Chart.getChart(canvas.id);
     var key = Object.keys(listenData[0])[0];
 
@@ -126,15 +100,16 @@ async function doRender(btns, canvas, elem){
         img.src = entry['url'];
         avatarImages[pos].push(img);
 
-        if (entry[key].length > 15){
-            entry[key] = entry[key].substring(0,12) + '...';
-        }
+        //if (entry[key].length > 15){
+        //    entry[key] = entry[key].substring(0,12) + '...';
+        //}
     });
+    /*
     var labels = listenData.map( function(track) {
         return (track[key].length > 15) 
             ? track[key].substring(0,12) + '...' 
             : track[key];
-    });
+    }); */
 
     if (currentChart == undefined){
         setupBarChart(canvas, listenData, pos, key)
@@ -142,7 +117,7 @@ async function doRender(btns, canvas, elem){
         currentChart.data.datasets.pop();
         currentChart.data.datasets.push({
             data: listenData,
-            labels: labels,
+            //labels: labels,
             parsing: {
                 xAxisKey: key,
                 yAxisKey: "plays"
