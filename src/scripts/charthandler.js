@@ -41,6 +41,7 @@ function setupBarChart(canvas, data, pos, key){
         plugins: [{
             id: 'barAvatarPlugin',
             afterDatasetsDraw(chart, args, pluginOptions){
+                if (pos == 0){ return; } // Skip rendering artists
                 const {ctx, data} = chart;
                 const meta = chart.getDatasetMeta(0);
                 const barWidth = meta.data[0].width;
@@ -48,12 +49,11 @@ function setupBarChart(canvas, data, pos, key){
                 meta.data.forEach((bar, index) => {
                     const img = avatarImages[pos][index];
                     if (img && img.complete) {
-                        const width = barWidth - 2; 
-                        const height = barWidth - 2;
+                        const width = barWidth ; 
+                        const height = barWidth ;
                         
                         const x = bar.x - (width / 2);
-                        
-                        const y = bar.y - height - 10; 
+                        const y = bar.y - (height / 2); 
 
                         ctx.drawImage(img, x, y, width, height);
                     }

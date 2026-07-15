@@ -32,13 +32,16 @@ export const chartOptions = {
             },
             scales: {
                 y: {
-                    grace: '60%',
+                    grace: 1,
                     grid: {
                         color: '#7b3306',
                         display: true,
                         drawBorder: true,
                         drawOnChartArea: false,
                         drawTicks: false,
+                    },
+                    ticks: {
+                        precision: 0, // No need for decimals really
                     }
                 },
                 x: {
@@ -86,7 +89,6 @@ export function combDuplicateEntries(listenData, dataID){
 
     if (dataID == "topartists"){
         duplicates.forEach( function(pair){
-            console.log(listenData)
             if(listenData[pair[0]] !== null){
                 listenData[pair[0]]["plays"] += listenData[pair[1]]["plays"];
                 listenData[pair[1]] = null;
