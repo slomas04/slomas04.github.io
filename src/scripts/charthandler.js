@@ -1,5 +1,5 @@
 import {Chart} from 'chart.js/auto';
-import { combDuplicateEntries, chartOptions } from './chartutils.ts';
+import { combDuplicateEntries, chartOptions } from './chartutils.js';
 
 const artistBtns = document.getElementById("artistBtnDiv").childNodes;
 const albumBtns = document.getElementById("albumBtnDiv").childNodes;
