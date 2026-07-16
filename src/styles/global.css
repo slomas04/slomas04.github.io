@@ -5,3 +5,7 @@
     --font-mono: var(--font-terminess-mono);
     --font-sans: var(--font-segoeui);
 }
+
+.pixelated-image {
+    image-rendering: pixelated;
+}

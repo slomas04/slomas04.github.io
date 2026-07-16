@@ -15,7 +15,7 @@ const site_title : string = "slom.fish";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+		<link rel="icon" type="image/png" href="/ralseiscribble.png" />
 		
         <Font cssVariable="--font-terminess-mono" />
 		<Font cssVariable="--font-segoeui" />
@@ -24,12 +24,12 @@ const site_title : string = "slom.fish";
 		<meta name="generator" content={Astro.generator} />
 		<title>{site_title}</title>
 	</head>
-	<body class="static overflow-x-visible overflow-y-hidden">
+	<body class="static overflow-x-visible overflow-y-scroll sm:overflow-y-hidden">
 
 		<div class="w-dvw h-dvh flex 
                     justify-center items-center z-5 absolute">
 			<div id="site-index-container"
-			     class="flex flex-col sm:flex-row w-full sm:w-5/6 2xl:w-3/5 h-full sm:h-9/10 overflow-x-visible">
+			     class="flex flex-col sm:flex-row w-full sm:w-5/6 2xl:w-3/5 h-full sm:h-9/10 overflow-x-visible overflow-y-scroll">
 				<SiteIndex />
 				<PageColumn>
 					<slot/>
@@ -46,7 +46,7 @@ const site_title : string = "slom.fish";
 										overflow-x-hidden
 										overflow-y-hidden">
 			<video id="background-video" 
-				   src="https://media.slom.fish/video/forestbackdrop.mp4" loop muted preload="metadata"
+				   src="https://media.slom.fish/video/forestbackdrop.mp4" loop muted autoplay preload="metadata"
 				   class = "hidden"/>
 			<img src="https://media.slom.fish/images/bluenoise_rgba_1024.png" alt="Blue Noise pattern for dithering" 
 			       class="hidden" id="blue-noise"/>
