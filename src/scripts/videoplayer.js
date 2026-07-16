@@ -99,6 +99,10 @@ function initShaders(vWidth, vHeight){
 // We need to make sure the video is cached and loaded first
 // Just getting video dimensions at load time causes things to sometimes get zeroed at load time (on chrome)
 function checkVideoState() {
+    video.setAttribute('crossorigin', 'anonymous');
+    video.src = "https://media.slom.fish/video/forestbackdrop.mp4"
+    video.load()
+    
     // If cached, then great
     if (video.readyState >= 1) { 
         initShaders(video.videoWidth, video.videoHeight);
@@ -111,5 +115,6 @@ function checkVideoState() {
         });
     }
 }
+
 
 checkVideoState();
