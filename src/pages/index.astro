@@ -32,6 +32,48 @@ const age = getAge("2004-07-07")
 		</div>
 	</ColumnElement>
 	<ColumnElement>
+		<script src="../scripts/quickmusicstats.js"/>
+		<div class=" flex flex-col sm:flex-row justify-between w-full">
+			<div id="flex flex-col w-1/2">
+				<p class="font-bold text-xl">This month on <a class="underline" href="https://www.last.fm/user/Slomas04">last.fm</a>:</p>
+				<div class="flex flex-row text-right items-baseline">
+					<p id="total_listens"></p>
+					<p class="">&nbsp;total streams</p>
+				</div>
+				<div class="flex flex-row text-right items-baseline">
+					<p id="avg_per_day"></p>
+					<p class="">&nbsp;streams per day</p>
+					<p class="text-sm italic">&nbsp;(avg)</p>
+				</div>
+				<div class="flex flex-row text-right items-baseline">
+					<p id="unique_artists"></p>
+					<p class="">&nbsp;unique artists</p>
+				</div>
+				<div class="flex flex-row text-right items-baseline">
+					<p id="unique_albums"></p>
+					<p class="">&nbsp;unique albums</p>
+				</div>
+				<div class="flex flex-row text-right items-baseline">
+					<p class="">Busiest hour: &nbsp;</p>
+					<p id="busiest_hour"></p>
+					<p class="text-sm italic" id="busiest_hour_tz"></p>
+				</div>
+			</div>
+			<div class="flex flex-row w-1/2 justify-between">
+				<div class="flex-grow flex-col w-full">
+					<p class="text-left font-bold text-xl">Top album:</p>
+					<p class="text-right font-bold" id="topalbum_name"></p>
+					<div class="text-right flex flex-row items-baseline justify-end">
+						<p class="text-right text-sm italic">by&nbsp;</p>
+						<p class="text-right" id="topalbum_artist"></p>
+					</div>
+					<p class="text-right" id="topalbum_plays"></p>
+				</div>
+				<img class="ml-2 grow-0 h-42" id="topalbum_img" alt="Top album, this month">
+			</div>
+		</div>
+	</ColumnElement>
+	<ColumnElement>
 		<div class="mx-4">
 			<p class="text-left">mi olin ale</p>
 			<div class="flex justify-center content-center">
