@@ -1,7 +1,4 @@
-
-const e_topalbum_img    = document.getElementById("topalbum_img")
-const e_topalbum_title  = document.getElementById("topalbum_name")
-const e_topalbum_artist = document.getElementById("topalbum_artist")
+import { combDuplicateEntries } from "./chartutils";
 
 const e_total_listens = document.getElementById("total_listens"); 
 const e_avg_per_day = document.getElementById("avg_per_day");
@@ -22,7 +19,9 @@ Date.prototype.isDstObserved = function () {
 
 async function getTopRelease (mode) {
     const dataURL = `https://media.slom.fish/musicdata/top${mode}s_1month.json`
-    const records = await ( await fetch(dataURL) ).json();
+    const records = combDuplicateEntries(
+        await ( await fetch(dataURL) ).json(), `top${mode}s`
+    );
     const top = records[0];
 
     document.getElementById(`top${mode}_img`).src = top['url'];
