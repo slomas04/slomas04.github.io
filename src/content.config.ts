@@ -18,5 +18,14 @@ const albums = defineCollection({
 });
 */
 
+const projects = defineCollection({
+    loader: glob({ base: './src/collections/projects', pattern: '**/*.{md,mdx}' }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        date: z.coerce.date()
+    })
+});
+
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { };
+export const collections = { projects };
