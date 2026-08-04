@@ -1,4 +1,4 @@
-import {Chart} from 'chart.js/auto';
+import { Chart } from 'chart.js/auto';
 import { combDuplicateEntries, chartOptions } from './chartutils.js';
 
 const artistBtns = document.getElementById("artistBtnDiv").childNodes;
@@ -118,7 +118,6 @@ async function doRender(btns, canvas, elem){
         });
         currentChart.update();
     }
-
 }
 
 Chart.defaults.color = "#d8d8d0";
