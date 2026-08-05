@@ -7,16 +7,6 @@ import { glob, file } from 'astro/loaders';
 // 3. Import Zod
 import { z } from 'astro/zod';
 
-/*
-const albums = defineCollection({
-    loader: file("src/collections/music/albums.json"),
-    schema: z.object({
-        favourite: z.string(),
-        comment: z.string(),
-        date_added: z.string()
-    })
-});
-*/
 
 const projects = defineCollection({
     loader: glob({ base: './src/collections/projects', pattern: '**/*.{md,mdx}' }),
@@ -24,6 +14,7 @@ const projects = defineCollection({
         title: z.string(),
         description: z.string(),
         date: z.coerce.date(),
+        url: z.string().optional()
     })
 });
 

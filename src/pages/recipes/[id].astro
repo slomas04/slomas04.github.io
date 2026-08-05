@@ -5,7 +5,7 @@ import ColumnElement from '../../components/ColumnElement.astro'
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('projects');
+  const posts = await getCollection('recipes');
   return posts.map(post => ({
     params: { 
         id: post.id,
@@ -25,15 +25,12 @@ const { Content } = await render(post);
                 <a href="/projects/" class="font-mono px-2 rounded-sm bg-sky-900 hover:underline hover:cursor-pointer">&lt- Back</a>
                 <p class="text-right text-sm italic px-2 rounded-sm bg-sky-900">{
                     post.data.date.toLocaleDateString("en-GB", {
-                        month: 'long', year: 'numeric'
+                        day: 'numeric', month: 'long', year: 'numeric'
                     })
                 }</p>
             </div>
             <p class="text-xl font-bold my-2">{post.data.title}</p>
             <p class="text-md ml-4">{post.data.description}</p>
-            {post.data.url == null 
-            ? <p class="text-sm ml-4">Please <a href="/contact/">contact me</a> to access this resource.</p> 
-            : <a class="text-sm ml-4 italic hover:underline" href={post.data.url}>--&gt {post.data.url}</a>}
         </div>
     </ColumnElement>
 
