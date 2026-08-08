@@ -29,7 +29,7 @@ const { Content } = await render(post);
                     })
                 }</p>
             </div>
-            <p class="text-xl font-bold my-2">{post.data.title}</p>
+            <h2 class="font-bold">{post.data.title}</h2>
             <p class="text-md ml-4">{post.data.description}</p>
             {post.data.url == null 
             ? <p class="text-sm ml-4">Please <a href="/contact/">contact me</a> to access this resource.</p> 
@@ -39,5 +39,11 @@ const { Content } = await render(post);
 
     <ColumnElement>
         <Content />
+        <script is:inline>
+            const videos = document.querySelectorAll('[id=playme]');
+            videos.forEach(function(e){
+                e.play().catch(err => console.log("Autoplay blocked:", err));
+            });
+        </script>
     </ColumnElement>
 </BaseBackdrop>

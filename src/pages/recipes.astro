@@ -9,8 +9,8 @@ import ColumnElement from '../components/ColumnElement.astro'
 import "../styles/global.css";
 
 const recipes = await getCollection('recipes')
-const EntryDivClass = `flex flex-col bg-sky-900 
-                       w-full my-2 px-2 py-1 rounded-md
+const EntryDivClass = `flex flex-col bg-stone-700 hover:bg-stone-800
+                       w-full my-2 px-3 py-2 rounded-md
                        transition duration-300 ease-in-out 
                        sm:hover:scale-105`
 
@@ -35,7 +35,7 @@ recipes.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
                     <p class="">{project.data.description}</p>
                     <p class="italic text-right text-sm">Created {
                         project.data.date.toLocaleDateString("en-GB", {
-                            month: 'long', year: 'numeric'
+                            day: 'numeric', month: 'long', year: 'numeric'
                         })}
                     </p>
                 </div></a>
