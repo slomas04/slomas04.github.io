@@ -11,7 +11,7 @@ const cover = document.getElementById('background-cover');
 var prevScale = 0;
 var lastMs = 0
 
-function initShaders(vWidth, vHeight){
+function initShaders(vWidth, vHeight, cached){
     
     /* Init render with no AA for performance
         and specify high-perf so that Chrome doesn't out-efficient us */
@@ -93,7 +93,10 @@ function initShaders(vWidth, vHeight){
     }
 
     requestAnimationFrame(render);
-    cover.classList.add("animate-fade-out")
+
+    if (!cached){
+        cover.classList.add("animate-fade-out")
+    }
 }
 
 // We need to make sure the video is cached and loaded first
@@ -102,15 +105,16 @@ function checkVideoState() {
     video.setAttribute('crossorigin', 'anonymous');
     video.src = "https://media.slom.fish/video/forestbackdrop.mp4"
     video.load()
-    
+    var cached = video.readyState >= 1;
+
     // If cached, then great
-    if (video.readyState >= 1) { 
-        initShaders(video.videoWidth, video.videoHeight);
+    if (cached) { 
+        initShaders(video.videoWidth, video.videoHeight, cached);
         video.play().catch(err => console.log("Autoplay blocked:", err));
     } else {
         // If not cached, I hate the antichrist
         video.addEventListener('loadedmetadata', () => {
-            initShaders(video.videoWidth, video.videoHeight);
+            initShaders(video.videoWidth, video.videoHeight, cached);
             video.play().catch(err => console.log("Autoplay blocked:", err));
         });
     }
