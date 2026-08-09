@@ -11,8 +11,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  site: 'https://samsthings.org',
-
   fonts: [{
     provider: fontProviders.local(),
     name: "TerminessMono",
