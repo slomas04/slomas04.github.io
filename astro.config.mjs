@@ -4,9 +4,6 @@ import { defineConfig, fontProviders} from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  outDir: 'public',
-  publicDir: 'static',
-
   vite: {
     plugins: [tailwindcss()],
   },
