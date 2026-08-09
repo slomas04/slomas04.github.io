@@ -19,15 +19,5 @@ const projects = defineCollection({
     })
 });
 
-const recipes = defineCollection({
-    loader: glob({ base: './src/collections/recipes', pattern: '**/*.{md,mdx}' }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        img: z.url().optional(),
-        date: z.coerce.date(),
-    })
-});
-
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { projects, recipes };
+export const collections = { projects };
