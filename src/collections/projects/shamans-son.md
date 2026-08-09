@@ -22,7 +22,7 @@ The dungeon is filled with snakes and skeletons that will operate with deadly pr
 
 <br>
 
-<div class="flex flex-col md:flex-row justify-evenly">
+<div class="flex flex-col sm:flex-row justify-evenly">
     <video autoplay muted loop width=300 id="playme" src="https://media.slom.fish/video/projects/shaman_reload_m-CLOZpAe9.mp4"> </video>
     <video autoplay muted loop width=300 id="playme" src="https://media.slom.fish/video/projects/shaman_shoot_m-d9r6YZtf.mp4"> slom</video>
 </div>

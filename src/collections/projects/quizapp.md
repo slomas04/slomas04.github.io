@@ -19,7 +19,7 @@ With Google Firebase functionality implemented, you can store your scores remote
 
 <br>
 
-<div class="flex flex-col md:flex-row justify-evenly">
+<div class="flex flex-col sm:flex-row justify-evenly">
     <img class="block m-auto" width=300
         src="https://media.slom.fish/images/projects/quiz_menu-C7pGun0A.png" \>
     <img class="block m-auto" width=300
