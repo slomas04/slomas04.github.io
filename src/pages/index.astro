@@ -1,9 +1,18 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection, getEntry } from 'astro:content';
 
 import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import ColumnElement from '../components/ColumnElement.astro'
 import "../styles/global.css";
+import Projects from './projects.astro';
+
+const EntryDivClass =  `bg-olive-800
+                        text-olive-300 text-shadow-lg/30
+                        shadow-xl/20 shadow-olive-800/50
+                        w-full`
+
+const projects = await getCollection('projects');
 
 // Grafted from https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
 const getAge = (birthDate: string) => Math.floor((new Date().valueOf() - new Date(birthDate).getTime()) / 3.15576e+10);
@@ -73,6 +82,40 @@ const age = getAge("2004-07-07")
 			</div>
 		</div>
 	</ColumnElement>
+
+	<ColumnElement>
+		<p class="text-2xl bold">Random project:</p><hr>
+		<div id="projects-container" class="mr-4 mt-2">
+			{projects.map(project => (
+                <div hidden class={EntryDivClass}>
+                    <p class="text-xl">{project.data.title}</p>
+                    <p class="">{project.data.description}</p>
+					<div class="flex flex-row justify-between items-start mb-1">
+						<div class="flex flex-row justify-start mt-1">
+							{ project.data.technologies.map(t => (
+								<p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">
+									{t}
+								</p>
+							)) }
+						</div>
+						<a class="text-lg hover:underline px-2 py-1 mr-2 rounded-sm bg-sky-900" 
+							href={`/projects/${project.id}`}>Visit -&gt</a>
+					</div>
+                    
+                    <p class="italic text-right text-sm">Created {
+                        project.data.date.toLocaleDateString("en-GB", {
+                            month: 'long', year: 'numeric'
+                        })}
+                    </p>
+                </div>
+			))}
+		</div>
+		<script is:inline>
+			const projects = document.getElementById('projects-container').children;
+			projects[Math.floor(Math.random() * projects.length)].removeAttribute("hidden");
+		</script>
+	</ColumnElement>
+
 	<ColumnElement>
 		<div class="mx-4">
 			<p class="text-left">mi olin ale</p>
