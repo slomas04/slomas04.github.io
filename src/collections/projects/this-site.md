@@ -3,18 +3,13 @@
 title: This website
 description: The very website that you are on right now!
 date: June 2026
-url: https://gitlab.com/slomfish/slomfish-pages
+url: https://github.com/slomas04/slomas04.github.io
 technologies:
     - Astro
     - GLSL
     - Chart.js
 
 ---
-
-## Introduction
-
-I'm well aware that I also own <ins>[samsthings.org](https://samsthings.org)</ins>. However, the allure of owning a website with the TLD of _.fish_ was too much. So, I'll use this site as a more personal and general-purpose site while the old domain will be a strictly-portfolio version of this site.
-
 ## The Astro framework
 
 My main methods for web programming in the past have either been in plain html/css/js, or using full-stack server-side rendering with a framework like Laravel. The former was very low-level and annoying to interpret, while the latter was a maze of documentation, plugins and frameworks.

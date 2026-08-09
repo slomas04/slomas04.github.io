@@ -41,17 +41,7 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <p class="text-2xl">Music</p>
-        <p>Data is refreshed daily and pulled from my <a class="underline" href="https://www.last.fm/user/Slomas04">last.fm</a>.</p>
-        <script type="module" src="/_astro/music.astro_astro_type_script_index_0_lang.CUt0aPfs.js"></script></div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><script type="module" src="/_astro/MusicSummary.astro_astro_type_script_index_0_lang.D7OkXgVT.js"></script><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Summary (this month)</p></div><div class="w-full grid grid-cols-3 justify-evenly font-mono py-3 gap-3"><div class="flex flex-col items-center"><p class="text-2xl" id="total_listens"></p><p class="">Listens</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="avg_per_day"></p><p class="">Average listens per day</p></div><div></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_artists"></p><p class="">Unique artists</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_albums"></p><p class="">Unique albums</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_tracks"></p><p class="">Unique tracks</p></div></div></div>
+        <div class="flex flex-col p-2"><div class="flex-row flex justify-between"><a href="/projects/" class="font-mono px-2 rounded-sm bg-sky-900 hover:underline hover:cursor-pointer">&lt- Back</a><p class="text-right text-sm italic px-2 rounded-sm bg-sky-900">August 2025</p></div><h2 class="font-bold">Wikipedia 2 GEXF</h2><p class="text-md ml-4">Run a BFS on a chosen Wikipedia article, get a resulting GEXF for analysis!</p><a class="text-sm ml-4 italic hover:underline" href="https://github.com/slomas04/WikitoGexf">--&gt https://github.com/slomas04/WikitoGexf</a><div class="flex flex-row justify-start mt-2"><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Python</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Gexf</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Wikipedia</p></div></div>
     </div>
 
     <div class="bg-olive-800
@@ -60,27 +50,53 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played albums</p><div id="albumBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topalbums_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topalbums_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topalbums_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topalbums"></canvas></div>
+        <h3 id="theres-a-converter-for-everything-these-days"><em>There’s a converter for everything these days!</em></h3>
+<p>Wiki2Gexf is a python (3.13.5) project that allows you to run a breadth-first search on a locally stored (and indexed) Wikipedia archive, and then export this search to a .gexf format.</p>
+<br>
+<p>Example renders made in Gephi:</p>
+<div class="w-full flex flex-row gap-2 justify-evenly">
+    <div class="flex flex-col items-center">
+        <img width="2048" height="2048" alt="chicory" src="https://github.com/user-attachments/assets/578afd5d-14b9-48c6-bdb2-edeca05b6b34" />
+        <p>Chicory: A Colorful Tale</p>
     </div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played tracks</p><div id="trackBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-toptracks_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-toptracks_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-toptracks_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="toptracks"></canvas></div>
+    <div class="flex flex-col items-center">
+        <img width="2048" height="2048" alt="strange2" src="https://github.com/user-attachments/assets/34c9d903-f9ac-44e9-b693-0f404258cc3b" />
+        <p>Wikipedia: Unusual Articles</p>
     </div>
+</div>
+<br>
+<h2 id="setupinstall-guide">Setup/Install Guide</h2>
+<ul>
+<li>To start, <code>clone</code> this repository. You will need to install the <code>NetworkX</code> package for Gexf functionality.</li>
+<li>Next: you will need to download two wikipedia archive files from <a href="https://dumps.wikimedia.org/">https://dumps.wikimedia.org/</a>. <strong>MAKE SURE THEY HAVE THE SAME DATE</strong>
+<ol>
+<li>pages-articles-multistream.xml.bz2 –&gt; The (heavily compressed) text archive of Wikipedia, should be well over 20GB. <strong>Torrent if possible! DO NOT EXTRACT!</strong></li>
+<li>pages-articles-multistream-index.txt.bz2 –&gt; The index of the byte offset for all articles in the multistream archive.</li>
+</ol>
+</li>
+<li>Extract the index file</li>
+<li>Place both the index and the multistream files in the same directory as this repository.</li>
+<li>Run <code>indexWiki.py</code>. This creates a folder (<code>index/</code>) that splits the index file up and sorts the articles in the subfiles.
+<ul>
+<li>This may take a while, and due to open file limits it will NOT work on Windows. I suggest either running this in WSL or moving the index folder over to Windows from Linux if you must use Windows.</li>
+</ul>
+</li>
+</ul>
+<br>
+<h2 id="usage-guide">Usage Guide</h2>
+<p>To create a gexf file for a search, run Wiki2Gexf.py.</p>
+<ul>
+<li>You can specify either an article name with <code>-n</code> or an article URL with <code>-u</code></li>
+<li>You can limit the depth of the search with <code>-d</code>. This defaults to 1, and any search with d&gt;1 will result in a very large gexf file.</li>
+<li>You need to specify an output file.</li>
+</ul>
 
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played artists</p><div id="artistBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topartists_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topartists_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topartists_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topartists"></canvas></div>
-    </div>
-
+        <script>
+            const videos = document.querySelectorAll('[id=playme]');
+            videos.forEach(function(e){
+                e.play().catch(err => console.log("Autoplay blocked:", err));
+            });
+        </script></div>
 
 				</div></div></div><div id="background-cover" class="w-full h-full absolute overflow-x-hidden overflow-y-hidden
 			        bg-olive-400 z-2 duration-500"></div><div id="video-container" class="z-1 absolute w-dvw h-dvh

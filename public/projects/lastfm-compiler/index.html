@@ -41,17 +41,7 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <p class="text-2xl">Music</p>
-        <p>Data is refreshed daily and pulled from my <a class="underline" href="https://www.last.fm/user/Slomas04">last.fm</a>.</p>
-        <script type="module" src="/_astro/music.astro_astro_type_script_index_0_lang.CUt0aPfs.js"></script></div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><script type="module" src="/_astro/MusicSummary.astro_astro_type_script_index_0_lang.D7OkXgVT.js"></script><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Summary (this month)</p></div><div class="w-full grid grid-cols-3 justify-evenly font-mono py-3 gap-3"><div class="flex flex-col items-center"><p class="text-2xl" id="total_listens"></p><p class="">Listens</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="avg_per_day"></p><p class="">Average listens per day</p></div><div></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_artists"></p><p class="">Unique artists</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_albums"></p><p class="">Unique albums</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_tracks"></p><p class="">Unique tracks</p></div></div></div>
+        <div class="flex flex-col p-2"><div class="flex-row flex justify-between"><a href="/projects/" class="font-mono px-2 rounded-sm bg-sky-900 hover:underline hover:cursor-pointer">&lt- Back</a><p class="text-right text-sm italic px-2 rounded-sm bg-sky-900">July 2026</p></div><h2 class="font-bold">LastFM API aggregator</h2><p class="text-md ml-4">Aggregates last.fm listening history into JSON files for export.</p><a class="text-sm ml-4 italic hover:underline" href="https://gitlab.com/slomfish/lastfm-api-compiler">--&gt https://gitlab.com/slomfish/lastfm-api-compiler</a><div class="flex flex-row justify-start mt-2"><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Python</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">REST API</p></div></div>
     </div>
 
     <div class="bg-olive-800
@@ -60,27 +50,62 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played albums</p><div id="albumBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topalbums_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topalbums_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topalbums_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topalbums"></canvas></div>
-    </div>
+        <h2 id="the-tidal-api">The TIDAL API</h2>
+<p>If I could code everything myself, then I would be writing my own scrobbler and hosting it somewhere, as it sounds like a fun project. However, TIDAL’s options for scrobbling are (painfully) limited. I quickly found out that the TIDAL API does not expose any endpoints for what you’re currently listening to, nor for your listening history. Instead you must connect your TIDAL app to last.fm for each device that you’re listening on.</p>
+<br>
+<p>Quite frankly, this sucks and is a bulky method of scrobbling. When I used Spotify, connecting a Last.fm account was a one-and-done deal. I initially connected it back in 2024 and it was still connected until I switched to TIDAL! Nevertheless, it is at least <em>some</em> form of scrobbling.</p>
+<h2 id="the-lastfm-api">The Last.fm API</h2>
+<p>I find it quite humorous how Last.fm requires its users to pay up for extended listening histories and aggregates. Especially when their free API allows you to do the exact same thing!
+The script that I wrote to do this is quite simple. It runs an upsert on your listening history until it hits a listen already recorded. Then, it compiles your listening data into the following aggregates:</p>
+<ul>
+<li><code>topalbums_[timeframe].json</code> <br> A descending list of top albums with the following values:
+<ul>
+<li><code>album_name</code>: The name of the album</li>
+<li><code>artist_name</code>: The artist/s credited</li>
+<li><code>plays</code>: The number of times listened to within the timeframe</li>
+<li><code>url</code>: A link to the album art</li>
+</ul>
+</li>
+<li><code>topartists_[timeframe].json</code><br> A descending list of top artists with the following values:
+<ul>
+<li><code>artist_name</code>: The artist’s name</li>
+<li><code>plays</code>: The number of times listened to within the timeframe</li>
+<li><code>url</code>: A link to the artist’s profile image (almost always empty)</li>
+</ul>
+</li>
+<li><code>toptracks_[timeframe].json</code><br> A descending list of top tracks with the following values:
+<ul>
+<li><code>album_name</code>: The name of the track</li>
+<li><code>artist_name</code>: The artist/s credited</li>
+<li><code>plays</code>: The number of times listened to within the timeframe</li>
+<li><code>url</code>: A link to the track art</li>
+</ul>
+</li>
+<li><code>aggregated.json</code>
+<ul>
+<li><code>[timeframe]</code>:
+<ul>
+<li><code>total_listens</code></li>
+<li><code>unique_artists</code></li>
+<li><code>unique_albums</code></li>
+<li><code>unique_tracks</code></li>
+<li><code>avg_per_day</code></li>
+<li><code>listen_hours</code> (array of GMT hours and how many listens were made in that hour)</li>
+</ul>
+</li>
+<li><code>listen_days_6mo</code>: (array of days over last 6 months and how many listens were made on that day)</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>This aggregation is necessary to reduce the amount of information being sent to the user each time they open up the <ins><a href="/music/">music page</a></ins>.</p>
 
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played tracks</p><div id="trackBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-toptracks_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-toptracks_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-toptracks_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="toptracks"></canvas></div>
-    </div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played artists</p><div id="artistBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topartists_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topartists_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topartists_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topartists"></canvas></div>
-    </div>
-
+        <script>
+            const videos = document.querySelectorAll('[id=playme]');
+            videos.forEach(function(e){
+                e.play().catch(err => console.log("Autoplay blocked:", err));
+            });
+        </script></div>
 
 				</div></div></div><div id="background-cover" class="w-full h-full absolute overflow-x-hidden overflow-y-hidden
 			        bg-olive-400 z-2 duration-500"></div><div id="video-container" class="z-1 absolute w-dvw h-dvh

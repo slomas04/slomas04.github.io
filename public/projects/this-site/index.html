@@ -41,17 +41,7 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <p class="text-2xl">Music</p>
-        <p>Data is refreshed daily and pulled from my <a class="underline" href="https://www.last.fm/user/Slomas04">last.fm</a>.</p>
-        <script type="module" src="/_astro/music.astro_astro_type_script_index_0_lang.CUt0aPfs.js"></script></div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><script type="module" src="/_astro/MusicSummary.astro_astro_type_script_index_0_lang.D7OkXgVT.js"></script><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Summary (this month)</p></div><div class="w-full grid grid-cols-3 justify-evenly font-mono py-3 gap-3"><div class="flex flex-col items-center"><p class="text-2xl" id="total_listens"></p><p class="">Listens</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="avg_per_day"></p><p class="">Average listens per day</p></div><div></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_artists"></p><p class="">Unique artists</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_albums"></p><p class="">Unique albums</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_tracks"></p><p class="">Unique tracks</p></div></div></div>
+        <div class="flex flex-col p-2"><div class="flex-row flex justify-between"><a href="/projects/" class="font-mono px-2 rounded-sm bg-sky-900 hover:underline hover:cursor-pointer">&lt- Back</a><p class="text-right text-sm italic px-2 rounded-sm bg-sky-900">June 2026</p></div><h2 class="font-bold">This website</h2><p class="text-md ml-4">The very website that you are on right now!</p><a class="text-sm ml-4 italic hover:underline" href="https://github.com/slomas04/slomas04.github.io">--&gt https://github.com/slomas04/slomas04.github.io</a><div class="flex flex-row justify-start mt-2"><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Astro</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">GLSL</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Chart.js</p></div></div>
     </div>
 
     <div class="bg-olive-800
@@ -60,27 +50,23 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played albums</p><div id="albumBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topalbums_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topalbums_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topalbums_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topalbums"></canvas></div>
-    </div>
+        <h2 id="the-astro-framework">The Astro framework</h2>
+<p>My main methods for web programming in the past have either been in plain html/css/js, or using full-stack server-side rendering with a framework like Laravel. The former was very low-level and annoying to interpret, while the latter was a maze of documentation, plugins and frameworks.</p>
+<br>
+<p>Astro finds a nice balance between these methods as you are structuring your site with an abstracted form of HTML suitable for pre-rendering, you are able to use tailwind for easier CSS, and Javascript can either be used to prerender or can be loaded at runtime alongside other frameworks such as Node.</p>
+<br>
+<p>To make the experience even more comfortable, you are able to define <ins><a href="https://docs.astro.build/en/guides/content-collections/">content collections</a></ins> that are automatically compiled and rendered at build-time. Instead of writing hundreds of blog posts manually you are instead able to define a renderer for the blog, and write the blog posts in markdown to be rendered later.</p>
+<h2 id="hosting">Hosting</h2>
+<p>Due to hosting fees and the ease of having a CI/CD pipeline managed for you, I decided to host the site on Gitlab Pages. Gitlab already has a template for Astro projects, so this was really simple to get set up.</p>
+<br>
+<p>However, Gitlab has a hard limit of 100mb per project for non-paying users. To get around this, I looked to the Hetzner server in Finland that I spun up for a custom VPN. I was able to transform this into a media server for hosting all of my site’s static content, and it is now located at <ins><a href="https://media.slom.fish/">media.slom.fish</a></ins>. Moreover, having a dedicated server for media hosting came in handy when I made my <ins><a href="/projects/lastfm-compiler">LastFM API aggregator</a></ins> script for this site’s music page. This simply runs on a cron job to fetch new listens nightly.</p>
 
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played tracks</p><div id="trackBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-toptracks_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-toptracks_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-toptracks_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="toptracks"></canvas></div>
-    </div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played artists</p><div id="artistBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topartists_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topartists_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topartists_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topartists"></canvas></div>
-    </div>
-
+        <script>
+            const videos = document.querySelectorAll('[id=playme]');
+            videos.forEach(function(e){
+                e.play().catch(err => console.log("Autoplay blocked:", err));
+            });
+        </script></div>
 
 				</div></div></div><div id="background-cover" class="w-full h-full absolute overflow-x-hidden overflow-y-hidden
 			        bg-olive-400 z-2 duration-500"></div><div id="video-container" class="z-1 absolute w-dvw h-dvh

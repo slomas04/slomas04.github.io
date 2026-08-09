@@ -23,20 +23,13 @@ const age = getAge("2004-07-07")
 	<ColumnElement>
 		<div class="flex flex-row justify-between">
 			<div>
-				<p class="font-mono text-lg">
-					Name: Sam <br>
-					Pronouns: Any/All <br>
-					Age: {age}
+				<p class="text-xl mb-1">
+					Sam Lomas
 				</p>
-				<p class=""><br>
+				<p class="">
 					British software and data engineer based in Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿.
-					<br>This is my personal site, where you can experience my ramblings and recommendations.
+					<br>This is my personal site, where I keep my portfolio and music dashboard.
 				</p>
-			</div>
-			<div class="flex flex-col justify-center ml-5 min-w-2/5 2xl:min-w-1/5">
-				<img src="https://media.slom.fish/images/me-asf.png" alt="Bourdain in Europe with a baguette and a coffee"
-						class="grayscale mix-blend-color-dodge"/>
-				<p class="text-xs italic">(Me asf on a Thursday afternoon)</p>
 			</div>
 		</div>
 	</ColumnElement>
@@ -114,17 +107,5 @@ const age = getAge("2004-07-07")
 			const projects = document.getElementById('projects-container').children;
 			projects[Math.floor(Math.random() * projects.length)].removeAttribute("hidden");
 		</script>
-	</ColumnElement>
-
-	<ColumnElement>
-		<div class="mx-4">
-			<p class="text-left">mi olin ale</p>
-			<div class="flex justify-center content-center">
-				<img src="https://media.slom.fish/images/flags/bi_flag.png" alt="Bisexual Flag" class="h-10 w-full"/>
-				<img src="https://media.slom.fish/images/flags/bi_gf_dither.png" alt="Bisexual Flag blend" class="h-10 w-60"/>
-				<img src="https://media.slom.fish/images/flags/gf_flag.png" alt="Genderfluid Flag" class="h-10 w-full"/>
-			</div>
-			<p class="text-right">mi sama ale</p>
-		</div>
 	</ColumnElement>
 </BaseBackdrop>

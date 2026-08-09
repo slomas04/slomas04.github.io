@@ -41,17 +41,7 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <p class="text-2xl">Music</p>
-        <p>Data is refreshed daily and pulled from my <a class="underline" href="https://www.last.fm/user/Slomas04">last.fm</a>.</p>
-        <script type="module" src="/_astro/music.astro_astro_type_script_index_0_lang.CUt0aPfs.js"></script></div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><script type="module" src="/_astro/MusicSummary.astro_astro_type_script_index_0_lang.D7OkXgVT.js"></script><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Summary (this month)</p></div><div class="w-full grid grid-cols-3 justify-evenly font-mono py-3 gap-3"><div class="flex flex-col items-center"><p class="text-2xl" id="total_listens"></p><p class="">Listens</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="avg_per_day"></p><p class="">Average listens per day</p></div><div></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_artists"></p><p class="">Unique artists</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_albums"></p><p class="">Unique albums</p></div><div class="flex flex-col items-center"><p class="text-2xl" id="unique_tracks"></p><p class="">Unique tracks</p></div></div></div>
+        <div class="flex flex-col p-2"><div class="flex-row flex justify-between"><a href="/projects/" class="font-mono px-2 rounded-sm bg-sky-900 hover:underline hover:cursor-pointer">&lt- Back</a><p class="text-right text-sm italic px-2 rounded-sm bg-sky-900">February 2022</p></div><h2 class="font-bold">Evil Tamagotchi</h2><p class="text-md ml-4">Virtual pet that feeds off WPA2 handshakes</p><a class="text-sm ml-4 italic hover:underline" href="https://github.com/slomas04/TAMAGOTCHI04">--&gt https://github.com/slomas04/TAMAGOTCHI04</a><div class="flex flex-row justify-start mt-2"><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Python</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">Aircrack-ng</p><p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">TKinterface</p></div></div>
     </div>
 
     <div class="bg-olive-800
@@ -60,27 +50,27 @@
                             shadow-xl/20 shadow-olive-800/50
                             border-single rounded-xs
                             w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played albums</p><div id="albumBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topalbums_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topalbums_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topalbums_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topalbums"></canvas></div>
-    </div>
+        <h3 id="nb-do-not-use-this-around-networks-that-you-dont-own-it-will-deauthenticate-indiscriminantly">NB: DO NOT USE THIS AROUND NETWORKS THAT YOU DON’T OWN. IT WILL DEAUTHENTICATE INDISCRIMINANTLY.</h3>
+<p>Created as coursework for my Computer Science A-Level, this evil virtual pet will deauthenticate nearby networks and feed off their WPA handshakes. Admittedly, I haven’t run this in at least 5 years now, so I cannot promise you that it still functions as it used to!</p>
+<br>
+<p>This requires a linux-based operating system and a wireless interface capable of entering monitor mode.
+Once the program is installed, please set your managed and monitor faces to their correct names in “tamagotchi.py” by changing the <code>interface</code> and <code>moninterface</code> variables.</p>
+<h2 id="installation-debian">Installation (Debian)</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p><code>sudo apt install aircrack-ng python3 &amp;&amp; pip install signal threading</code></p>
+<h3 id="creating-a-folder">Creating a folder</h3>
+<p><code>git clone https://github.com/slomas04/TAMAGOTCHI04.git</code></p>
+<h2 id="how-to-run">How to Run</h2>
+<p><code>cd TAMAGOTCHI04</code></p>
+<p>Make sure you are in the root directory of the repository</p>
+<p><code>python3 tamagotchi.py</code></p>
 
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played tracks</p><div id="trackBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-toptracks_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-toptracks_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-toptracks_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="toptracks"></canvas></div>
-    </div>
-
-    <div class="bg-olive-800
-                            text-olive-300 text-shadow-lg/30
-                            border-3 border-olive-300 
-                            shadow-xl/20 shadow-olive-800/50
-                            border-single rounded-xs
-                            w-full my-2 px-6 py-4">
-        <div class="w-full flex justify-center flex-col text-xs sm:text-sm md:text-base text-nowrap"><div class="w-full flex justify-between flex-col sm:flex-row"><p class="text-left font-mono bg-amber-900 rounded-sm px-2 max-w-fit">Most played artists</p><div id="artistBtnDiv" class="flex justify-end flex-row font-mono"><div id="btn-topartists_1month" class="px-2 rounded-l-sm bg-amber-700 hover:underline hover:cursor-pointer">1 month</div><div id="btn-topartists_3months" class="px-2 bg-amber-800 hover:underline hover:cursor-pointer">3 months</div><div id="btn-topartists_alltime" class="px-2 rounded-r-sm bg-amber-900 hover:underline hover:cursor-pointer">All time</div></div></div><canvas class="w-full mt-4 mb-2 max-h-72 sm:max-h-64 xl:max-h-110" id="topartists"></canvas></div>
-    </div>
-
+        <script>
+            const videos = document.querySelectorAll('[id=playme]');
+            videos.forEach(function(e){
+                e.play().catch(err => console.log("Autoplay blocked:", err));
+            });
+        </script></div>
 
 				</div></div></div><div id="background-cover" class="w-full h-full absolute overflow-x-hidden overflow-y-hidden
 			        bg-olive-400 z-2 duration-500"></div><div id="video-container" class="z-1 absolute w-dvw h-dvh
