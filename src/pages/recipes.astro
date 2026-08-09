@@ -9,10 +9,13 @@ import ColumnElement from '../components/ColumnElement.astro'
 import "../styles/global.css";
 
 const recipes = await getCollection('recipes')
-const EntryDivClass = `flex flex-col bg-stone-700 hover:bg-stone-800
-                       w-full my-2 px-3 py-2 rounded-md
-                       transition duration-300 ease-in-out 
-                       sm:hover:scale-105`
+const EntryDivClass = `bg-olive-800
+                        text-olive-300 text-shadow-lg/30
+                        border-3 border-olive-300 
+                        shadow-xl/20 shadow-olive-800/50
+                        border-single rounded-xs
+                        w-full my-2 px-6 py-4 transition duration-300 ease-in-out 
+                        sm:hover:scale-105`
 
 recipes.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
 ---
@@ -25,9 +28,9 @@ recipes.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
         </div>
     </ColumnElement>
 
-    <div class="bg-[#2b2b2255] text-olive-300 text-shadow-lg/30
+    <div class="text-olive-300 text-shadow-lg/30
          shadow-xl/20 shadow-olive-800/50 rounded-lg w-full my-2 px-6 py-4">
-        <div class="flex flex-col p-2">
+        <div class="flex flex-col p-1">
             { recipes.map(project => (
                 <a href={`/recipes/${project.id}`}>
                 <div class={EntryDivClass}>

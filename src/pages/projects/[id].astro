@@ -34,6 +34,13 @@ const { Content } = await render(post);
             {post.data.url == null 
             ? <p class="text-sm ml-4">Please <a href="/contact/">contact me</a> to access this resource.</p> 
             : <a class="text-sm ml-4 italic hover:underline" href={post.data.url}>--&gt {post.data.url}</a>}
+            <div class="flex flex-row justify-start mt-2">
+                { post.data.technologies.map(t => (
+                    <p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">
+                        {t}
+                    </p>
+                )) }
+            </div>
         </div>
     </ColumnElement>
 

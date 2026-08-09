@@ -4,6 +4,10 @@ title: Sociogram Analysis Toolkit
 description: My undergraduate dissertation! Analysis of extreme-right circles on Instagram with a custom-built tool
 date: April 2025
 url: https://github.com/slomas04/sociogram-analysis-toolkit
+technologies:
+    - Laravel
+    - Scraping
+    - Sigma.js
 
 ---
 

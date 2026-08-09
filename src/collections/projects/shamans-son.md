@@ -4,6 +4,9 @@ title: Untitled Unity first-person shooter
 description: Inspired by Indie games like QWOP and Reciever, this game reminds you of why we don't use intricate controls.
 date: May 2025
 url: https://github.com/slomas04/Unity-ShamansSon
+technologies:
+    - Unity
+    - C#
 
 ---
 
@@ -21,5 +24,5 @@ The dungeon is filled with snakes and skeletons that will operate with deadly pr
 
 <div class="flex flex-row justify-evenly">
     <video autoplay muted loop width=300 id="playme" src="https://media.slom.fish/video/projects/shaman_reload_m-CLOZpAe9.mp4"> </video>
-    <video autoplay muted loop width=300 id="playme" src="https://media.slom.fish/video/projects/shaman_shoot_m-d9r6YZtf.mp4"> </video>
+    <video autoplay muted loop width=300 id="playme" src="https://media.slom.fish/video/projects/shaman_shoot_m-d9r6YZtf.mp4"> slom</video>
 </div>

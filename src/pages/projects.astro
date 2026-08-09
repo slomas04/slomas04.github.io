@@ -8,11 +8,15 @@ import BaseBackdrop from '../layouts/BaseBackdrop.astro';
 import ColumnElement from '../components/ColumnElement.astro'
 import "../styles/global.css";
 
-const projects = await getCollection('projects')
-const EntryDivClass = `flex flex-col bg-stone-700 hover:bg-stone-800
-                       w-full my-2 px-3 py-2 rounded-md
-                       transition duration-300 ease-in-out 
-                       sm:hover:scale-105`
+const projects = await getCollection('projects');
+
+const EntryDivClass =  `bg-olive-800
+                        text-olive-300 text-shadow-lg/30
+                        border-3 border-olive-300 
+                        shadow-xl/20 shadow-olive-800/50
+                        border-single rounded-xs
+                        w-full my-2 px-6 py-4 transition duration-300 ease-in-out 
+                        sm:hover:scale-105`
 
 projects.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
 ---
@@ -21,18 +25,25 @@ projects.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
     <ColumnElement>
         <div class="flex flex-col p-2">
             <p class="text-xl mb-2">Projects</p>
-            <p class="">This is a directory of all my projects to date. Some are complete and polished, while others are just proofs of concept or datasets.</p>
+            <p class="">This is a directory of all my projects to date. Some are complete and polished, while others are just proofs of concept.</p>
         </div>
     </ColumnElement>
 
-    <div class="bg-[#2b2b2255] text-olive-300 text-shadow-lg/30
+    <div class="text-olive-300 text-shadow-lg/30
          shadow-xl/20 shadow-olive-800/50 rounded-lg w-full my-2 px-6 py-4">
-        <div class="flex flex-col p-2">
+        <div class="flex flex-col p-1">
             { projects.map(project => (
                 <a href={`/projects/${project.id}`}>
                 <div class={EntryDivClass}>
                     <p class="text-xl">{project.data.title}</p>
                     <p class="">{project.data.description}</p>
+                    <div class="flex flex-row justify-start mt-1">
+                        { project.data.technologies.map(t => (
+                            <p class="text-sm px-2 mr-2 rounded-sm bg-sky-900">
+                                {t}
+                            </p>
+                        )) }
+                    </div>
                     <p class="italic text-right text-sm">Created {
                         project.data.date.toLocaleDateString("en-GB", {
                             month: 'long', year: 'numeric'
