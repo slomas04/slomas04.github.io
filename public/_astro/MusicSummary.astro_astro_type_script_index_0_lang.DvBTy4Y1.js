@@ -1,1 +1,0 @@
-import"./auto.BHkDQLM7.js";var e=`https://media.slom.fish/musicdata/aggregated.json`,t=[`total_listens`,`unique_tracks`,`unique_artists`,`unique_albums`,`avg_per_day`],n=(await(await fetch(e)).json())[`1month`];t.forEach(function(e){document.getElementById(e).textContent=n[e]});
